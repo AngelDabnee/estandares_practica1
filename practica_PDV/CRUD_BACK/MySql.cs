@@ -13,7 +13,7 @@ namespace practica_PDV.CRUD_BACK
         MySqlConnection con; 
         MySqlCommand command;
         MySqlDataReader reader;
-        public MySql(string host, string us, string pwd, string bd, string puerto = "3306") : base()
+        public MySql(string host = "localhost", string us = "root", string pwd = "", string bd = "practica_PDV", string puerto = "3306") : base()
         {
             //vamos a inicializar los valores de conexión en el connectionString
             this.connectionStrgin = $"Server={host};Port={puerto};Database={bd};Uid={us};Pwd={pwd};";
@@ -205,7 +205,7 @@ namespace practica_PDV.CRUD_BACK
             return result;
         }
 
-        public override List<object[]> selectOne(string tabla, string criterioBusqueda)
+        public override List<object[]> selectOne(string campo, string tabla, string criterioBusqueda)
         {
             List<object[]> result = new List<object[]>();
             try
@@ -213,7 +213,7 @@ namespace practica_PDV.CRUD_BACK
                 if (con.State == System.Data.ConnectionState.Closed)
                 {
                     con.Open();
-                    command = new MySqlCommand($"SELECT * FROM {tabla} WHERE {criterioBusqueda};");
+                    command = new MySqlCommand($"SELECT {campo} FROM {tabla} WHERE {criterioBusqueda};");
                     command.Connection = con;
                     reader = command.ExecuteReader();
                     if (reader.HasRows)

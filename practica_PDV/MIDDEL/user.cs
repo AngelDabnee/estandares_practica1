@@ -8,7 +8,7 @@ using practica_PDV.CRUD_BACK;
 
 namespace practica_PDV.MIDDEL
 {
-    public class user
+    public class User
     {
         public int id;
         public string name;
@@ -17,9 +17,9 @@ namespace practica_PDV.MIDDEL
         public static string mesError;
         CRUDs_BD bd;
 
-        public user()
+        public User()
         {
-            bd = new CRUD_BACK.MySql("localhost", "root", "", "practica_pdv");
+            bd = new CRUD_BACK.MySql();
         }
         public bool insertUser(string name, string email, string password)
         {
@@ -35,7 +35,7 @@ namespace practica_PDV.MIDDEL
             bool results = this.bd.insert("users",campos,valores);
             if (results == false) 
             {
-                user.mesError = this.bd.mesError;
+                User.mesError = this.bd.mesError;
             }
             return results;
         }
@@ -44,7 +44,7 @@ namespace practica_PDV.MIDDEL
             bool results = this.bd.delete("users",id);
             if (results == false) 
             {
-                user.mesError = this.bd.mesError;
+                User.mesError = this.bd.mesError;
             }
             return results;
         }
@@ -62,7 +62,7 @@ namespace practica_PDV.MIDDEL
             bool results = this.bd.update("users", campos, valores,id);
             if (results == false)
             {
-                user.mesError = this.bd.mesError;
+                User.mesError = this.bd.mesError;
             }
             return results;
         }
@@ -75,10 +75,10 @@ namespace practica_PDV.MIDDEL
             List<object[]> result = this.bd.selectOne("users", name);
             return result;
         }
-        public user login(string email, string password) 
+        public User login(string email, string password) 
         {
-            user user = new user();
-            List<object[]> result = this.bd.selectOne("users", "email='" + " email='" + email + "' AND password = '" + password + "'");
+            User user = new User();
+            List<object[]> result = this.bd.selectOne("users", "email='" + email + "' AND password = '" + password + "'");
             if (result.Count == 1)
             {
                 object[] tempo = result[0];
@@ -89,7 +89,7 @@ namespace practica_PDV.MIDDEL
             }
             else 
             {
-                user.mesError = "ERROR,NO EXISTE " + this.bd.mesError;
+                User.mesError = "ERROR,NO EXISTE " + this.bd.mesError;
                 user = null;
             }
             return user;

@@ -22,7 +22,7 @@ namespace practica_PDV.MIDDEL
 
         public products() 
         {
-            bd = new CRUD_BACK.MySql("localhost","root","","practica_pdv");
+            bd = new CRUD_BACK.MySql();
         }
         public bool insert(string name, string description, double price, int quantity_in_stock)
         {
