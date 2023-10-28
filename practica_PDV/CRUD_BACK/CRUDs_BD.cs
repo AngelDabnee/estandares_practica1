@@ -31,5 +31,6 @@ namespace practica_PDV.CRUD_BACK
         public abstract bool delete(string tabla, int id);
         public abstract List<object[]> selectAll(string tabla);
         public abstract List<object[]> selectOne(string tabla, string criterioBusqueda);
+        public abstract object selectUser(string campo, string tabla, string criterioBusqueda);
     }
 }

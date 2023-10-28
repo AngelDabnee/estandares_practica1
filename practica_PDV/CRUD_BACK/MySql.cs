@@ -111,8 +111,7 @@ namespace practica_PDV.CRUD_BACK
             return result;
         }
         public override bool update(string tabla, List<string> campos, List<ValoresAInsertar> valores, int id)
-        {
-            //valorar el insert 
+        { 
             bool result = false;
             try
             {
@@ -125,14 +124,7 @@ namespace practica_PDV.CRUD_BACK
                         camposConcat += campo + ",";//A cada campo lo separamos por una coma. 
                     }
                     camposConcat = camposConcat.Remove(camposConcat.Length - 1);//quitamos la ultima coma
-                    string valoresInsert = "";
-                    for (int i = 0; i < valores.Count; i++)
-                    {
-                        valoresInsert += (valores[i].llevaApostrofes ? "'" + valores[i].valor + "'," : valores[i].valor + ",");
-
-                    }
-                    valoresInsert = valoresInsert.Remove(valoresInsert.Length - 1);//removemos la ultima coma. 
-                    command = new MySqlCommand($"INSERT INTO {tabla} ({camposConcat}) VALUES ({valoresInsert});");
+                    command = new MySqlCommand($"UPDATE {tabla} SET {camposConcat} WHERE product_id = {id};");
                     command.Connection = con;
                     int res = command.ExecuteNonQuery();
                     if (res == 1)
@@ -142,7 +134,7 @@ namespace practica_PDV.CRUD_BACK
                     else
                     {
                         result = false;
-                        this.mesError = "No se registro algo";
+                        this.mesError = "ERROR AL ACTUALIZAR";
                     }
                 }
 
@@ -154,7 +146,7 @@ namespace practica_PDV.CRUD_BACK
             }
             catch (Exception ex)
             {
-                this.mesError = $"ERROR AL REGISTRAR {ex.Message}";
+                this.mesError = $"ERROR AL MODIFICAR {ex.Message}";
             }
             finally
             {
@@ -171,12 +163,144 @@ namespace practica_PDV.CRUD_BACK
 
         public override List<object[]> selectAll(string tabla)
         {
-            throw new NotImplementedException();
+            List<object[]> result = new List<object[]>();
+            try
+            {
+                if (con.State == System.Data.ConnectionState.Closed) {
+                    con.Open();
+                    command = new MySqlCommand($"SELECT * FROM {tabla};");
+                    command.Connection = con; 
+                    reader = command.ExecuteReader();
+                    if (reader.HasRows) { 
+                        while (reader.Read()) 
+                        {
+                            object[] row = new object[reader.FieldCount];
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                row[i] = reader.GetValue(i);
+                            }
+                            result.Add(row);
+                        }
+
+                    }
+                    else
+                    {
+                        this.mesError = $"NO SE ENCONTRÓ NADA{tabla}";
+                        result = new List<object[]>();
+                    }
+                }
+            }
+            catch (MySqlException mex)
+            {
+                this.mesError = $"ERROR EN LA CONSULTA {mex.Message}";
+            }
+            catch (Exception ex) {
+                this.mesError = $"Error {ex.Message}";
+            }
+            finally {
+                if (con.State == System.Data.ConnectionState.Open) {
+                    con.Close() ;   
+                }
+            }
+            return result;
         }
 
         public override List<object[]> selectOne(string tabla, string criterioBusqueda)
         {
-            throw new NotImplementedException();
+            List<object[]> result = new List<object[]>();
+            try
+            {
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
+                    con.Open();
+                    command = new MySqlCommand($"SELECT * FROM {tabla} WHERE {criterioBusqueda};");
+                    command.Connection = con;
+                    reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            object[] row = new object[reader.FieldCount];
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                row[i] = reader.GetValue(i);
+                            }
+                            result.Add(row);
+                        }
+
+                    }
+                    else
+                    {
+                        this.mesError = $"NO SE ENCONTRÓ NADA{tabla}";
+                        result = new List<object[]>();
+                    }
+                }
+            }
+            catch (MySqlException mex)
+            {
+                this.mesError = $"ERROR EN LA CONSULTA {mex.Message}";
+            }
+            catch (Exception ex)
+            {
+                this.mesError = $"Error {ex.Message}";
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            return result;
+        }
+
+        public override object selectUser(string campo, string tabla, string criterioBusqueda)
+        {
+            List<object[]> result = new List<object[]>();
+            try
+            {
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
+                    con.Open();
+                    command = new MySqlCommand($"SELECT * FROM {tabla} WHERE {criterioBusqueda};");
+                    command.Connection = con;
+                    reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            object[] row = new object[reader.FieldCount];
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                row[i] = reader.GetValue(i);
+                            }
+                            result.Add(row);
+                        }
+
+                    }
+                    else
+                    {
+                        this.mesError = $"NO SE ENCONTRÓ NADA{tabla}";
+                        result = new List<object[]>();
+                    }
+                }
+            }
+            catch (MySqlException mex)
+            {
+                this.mesError = $"ERROR EN LA CONSULTA {mex.Message}";
+            }
+            catch (Exception ex)
+            {
+                this.mesError = $"Error {ex.Message}";
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            return result;
         }
     }
 }
