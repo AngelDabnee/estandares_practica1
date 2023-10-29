@@ -1,5 +1,6 @@
 ﻿using practica_PDV.FromProductos;
 using practica_PDV.FRONT.FromInsert;
+using practica_PDV.LOGIN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace practica_PDV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

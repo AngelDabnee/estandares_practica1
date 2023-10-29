@@ -13,7 +13,7 @@ namespace practica_PDV.CRUD_BACK
         MySqlConnection con;
         MySqlCommand command;
         MySqlDataReader reader;
-        public MySql(string host = "localhost", string us = "root", string pwd = "", string bd = "practica_PDV", string puerto = "3306") : base()
+        public MySql(string host = "localhost", string us = "root", string pwd = "", string bd = "practica_PDV", string puerto = "3306")
         {
             //vamos a inicializar los valores de conexión en el connectionString
             this.connectionStrgin = $"Server={host};Port={puerto};Database={bd};Uid={us};Pwd={pwd};";

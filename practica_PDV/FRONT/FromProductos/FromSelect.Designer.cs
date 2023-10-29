@@ -33,26 +33,25 @@
             this.labelTitulo = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panelBusqueda = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.iconBuscar = new FontAwesome.Sharp.IconButton();
-            this.panelDataGrid = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.Panel();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.iconBuscar = new FontAwesome.Sharp.IconButton();
+            this.panelDataGrid = new System.Windows.Forms.Panel();
             this.dataGridProduct = new System.Windows.Forms.DataGridView();
             this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_in_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.panelTitulo.SuspendLayout();
             this.panelBusqueda.SuspendLayout();
-            this.panelDataGrid.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.menu.SuspendLayout();
+            this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,30 +97,33 @@
             this.panelBusqueda.Size = new System.Drawing.Size(1219, 486);
             this.panelBusqueda.TabIndex = 1;
             // 
-            // btnMenu
+            // txtId
             // 
-            this.btnMenu.AutoSize = true;
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenu.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(196, 64);
-            this.btnMenu.TabIndex = 4;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.txtId.Location = new System.Drawing.Point(507, 150);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.TabIndex = 7;
+            this.txtId.Visible = false;
             // 
-            // btnMenuPrincipal
+            // panelMenu
             // 
-            this.btnMenuPrincipal.AutoSize = true;
-            this.btnMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 128);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(196, 64);
-            this.btnMenuPrincipal.TabIndex = 3;
-            this.btnMenuPrincipal.Text = "Menú Principal";
-            this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.panelMenu.Controls.Add(this.menu);
+            this.panelMenu.Controls.Add(this.btnMenu);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMenu.Location = new System.Drawing.Point(1023, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(196, 486);
+            this.panelMenu.TabIndex = 6;
+            // 
+            // menu
+            // 
+            this.menu.Controls.Add(this.btnInsert);
+            this.menu.Controls.Add(this.btnEliminar);
+            this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menu.Location = new System.Drawing.Point(0, 64);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(196, 422);
+            this.menu.TabIndex = 5;
             // 
             // btnInsert
             // 
@@ -135,6 +137,32 @@
             this.btnInsert.Text = "Nuevo";
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AutoSize = true;
+            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(0, 0);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(196, 64);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.AutoSize = true;
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenu.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(196, 64);
+            this.btnMenu.TabIndex = 4;
+            this.btnMenu.Text = "Herramientas";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // iconBuscar
             // 
@@ -158,40 +186,6 @@
             this.panelDataGrid.Name = "panelDataGrid";
             this.panelDataGrid.Size = new System.Drawing.Size(1219, 157);
             this.panelDataGrid.TabIndex = 3;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AutoSize = true;
-            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(0, 0);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(196, 64);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.Controls.Add(this.menu);
-            this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMenu.Location = new System.Drawing.Point(1023, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(196, 486);
-            this.panelMenu.TabIndex = 6;
-            // 
-            // menu
-            // 
-            this.menu.Controls.Add(this.btnMenuPrincipal);
-            this.menu.Controls.Add(this.btnInsert);
-            this.menu.Controls.Add(this.btnEliminar);
-            this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menu.Location = new System.Drawing.Point(0, 64);
-            this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(196, 422);
-            this.menu.TabIndex = 5;
             // 
             // dataGridProduct
             // 
@@ -247,13 +241,6 @@
             this.quantity_in_stock.MinimumWidth = 6;
             this.quantity_in_stock.Name = "quantity_in_stock";
             // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(507, 150);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 22);
-            this.txtId.TabIndex = 7;
-            // 
             // FromSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,11 +260,11 @@
             this.panelTitulo.PerformLayout();
             this.panelBusqueda.ResumeLayout(false);
             this.panelBusqueda.PerformLayout();
-            this.panelDataGrid.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.panelDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).EndInit();
             this.ResumeLayout(false);
 
@@ -293,7 +280,6 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Button btnMenuPrincipal;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Panel menu;

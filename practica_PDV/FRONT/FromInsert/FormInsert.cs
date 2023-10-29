@@ -98,5 +98,11 @@ namespace practica_PDV.FRONT.FromInsert
                 this.limpiarForm(true);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

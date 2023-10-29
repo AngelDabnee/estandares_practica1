@@ -82,15 +82,14 @@ namespace practica_PDV.FromProductos
                 if (res == false)
                 {
                     MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
-                    this.limpiarForm(true);
-                    this.FromSelect_Load(sender, e);
+                    this.cargarDatos();
                 }
                 else
                 {
                     MessageBox.Show("ERROR AL ELIMINAR PRODUCTO " + Products.msgError);
                 }
-                this.limpiarForm(false);
             }
+            this.cargarDatos();
         }
         public void limpiarForm(bool habilita)
         {
@@ -112,8 +111,8 @@ namespace practica_PDV.FromProductos
             if (e.RowIndex >= 0)
             {
                 int celdas = e.RowIndex;
-                txtId.Text = dataGridProduct.Rows[celdas].Cells[0].ToString();
-                this.identi = int.Parse(txtId.Text);
+                txtId.Text = dataGridProduct.Rows[celdas].Cells[0].Value.ToString();
+                this.identi = (int)dataGridProduct.Rows[celdas].Cells[0].Value;
             }
         }
     }
