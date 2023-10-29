@@ -30,7 +30,8 @@ namespace practica_PDV.CRUD_BACK
         public abstract bool update(string tabla, List<string> campos, List<ValoresAInsertar> valores, int id);
         public abstract bool delete(string tabla, int id);
         public abstract List<object[]> selectAll(string tabla);
+        public abstract List<object[]> selectAll(string tabla,string criterioBusqueda);
         public abstract List<object[]> selectOne(string campo, string tabla, string criterioBusqueda);
-        public abstract object selectUser(string campo, string tabla, string criterioBusqueda);
+        public abstract object selectUser(string tabla, string criterioBusqueda);
     }
 }

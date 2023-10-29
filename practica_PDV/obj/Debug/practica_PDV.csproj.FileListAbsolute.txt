@@ -40,3 +40,7 @@ C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.csp
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.csproj.CopyComplete
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.exe
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.pdb
+C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.LOGIN.Login.resources
+C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FromProductos.FromSelect.resources
+C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromInsert.FormInsert.resources

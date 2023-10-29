@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace practica_PDV.MIDDEL
 {
-    public class products
+    public class Products
     {
         public int id;
         public string name;
@@ -20,7 +20,7 @@ namespace practica_PDV.MIDDEL
         public static string msgError;
         CRUDs_BD bd; 
 
-        public products() 
+        public Products() 
         {
             bd = new CRUD_BACK.MySql();
         }
@@ -39,7 +39,7 @@ namespace practica_PDV.MIDDEL
             bool results = this.bd.insert("products",listCampos,vals);
             if (results == false) 
             {
-                products.msgError = this.bd.mesError;
+                Products.msgError = this.bd.mesError;
             }
             return results;
         }
@@ -58,16 +58,16 @@ namespace practica_PDV.MIDDEL
             bool results = this.bd.update("products", listCampos, vals,id);
             if (results == false)
             {
-                products.msgError = this.bd.mesError;
+                Products.msgError = this.bd.mesError;
             }
             return results;
         }
         public bool delete(int id) 
         {
             bool result = this.bd.delete("products",id);
-            if (result = false) 
+            if (result == false) 
             {
-                products.msgError= this.bd.mesError;
+                Products.msgError= this.bd.mesError;
             }
             return result;
         }
@@ -77,7 +77,7 @@ namespace practica_PDV.MIDDEL
         }
         public double selectForPrice(int id) 
         {
-            List<object[]> results = this.bd.selectOne("products","id=" + id);
+            List<object[]> results = this.bd.selectOne("price","products","product_id=" + id);
             double price = 0;
             if (results.Count == 1)
             {
@@ -86,14 +86,14 @@ namespace practica_PDV.MIDDEL
             }
             else 
             {
-                products.msgError=(this.bd.mesError);
+                Products.msgError=(this.bd.mesError);
                 price = -1;
             }
             return price;
         }
         public List<object[]> selectForName(string name) 
         {
-            List<object[]> results = this.bd.selectOne("products","name="+"'"+name+"'");
+            List<object[]> results = this.bd.selectOne("name","products","name=" + "'name'");
             return results;
         }
     }

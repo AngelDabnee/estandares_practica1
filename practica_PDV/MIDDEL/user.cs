@@ -72,13 +72,13 @@ namespace practica_PDV.MIDDEL
         }
         public List<object[]> selectForName(string name) 
         {
-            List<object[]> result = this.bd.selectOne("users", name);
+            List<object[]> result = this.bd.selectOne("name","users", "name=" +"'name'");
             return result;
         }
         public User login(string email, string password) 
         {
             User user = new User();
-            List<object[]> result = this.bd.selectOne("users", "email='" + email + "' AND password = '" + password + "'");
+            List<object[]> result = this.bd.selectAll("users", "email='" + email + "' AND password = '" + password + "'");
             if (result.Count == 1)
             {
                 object[] tempo = result[0];

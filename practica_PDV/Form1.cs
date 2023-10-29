@@ -9,53 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
-
+using practica_PDV.FromProductos;
 
 namespace practica_PDV
 {
     public partial class Form1 : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=practica_pdv;uid=root;pwd=;");
-        MySqlCommand comando;
-        MySqlDataReader leer;
-        String comandoSelect = "";
-        String cantidad = "";
-        double sumaTotal = 0;
-        double descuento = 0;
-        int rows = 0;
-
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void login_Click(object sender, EventArgs e)
+        private Form activeForm = null;
+        private void openHijoFrom(Form form)
         {
-            
-            try
+            if (activeForm != null)
             {
-                string email = txt_email.Text;
-                if(con.State == System.Data.ConnectionState.Closed)
-                {
-                    con.Open();
-                    comando = new MySqlCommand($"SELECT name FROM customers WHERE email = '{email}';");
-                    comando.Connection = con;
-                    leer = comando.ExecuteReader();
-                    if (leer.HasRows) {
-                        MessageBox.Show("encontramos algo");
-                    }
-                }
-
-
+                activeForm.Close();
             }
-            catch (MySqlException mes)
-            {
-                MessageBox.Show($"Error de db{mes}");
-                
-            }catch (Exception ex) {
-                MessageBox.Show($"Error General de algo{ex}");
-            }
-
+            activeForm = form;
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelFrom.Controls.Add(form);
+            panelFrom.Tag = form;
+            form.Show();
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            openHijoFrom(new FromSelect());
         }
     }
 }

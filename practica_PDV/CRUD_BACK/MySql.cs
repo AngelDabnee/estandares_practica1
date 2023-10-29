@@ -254,7 +254,7 @@ namespace practica_PDV.CRUD_BACK
             return result;
         }
 
-        public override object selectUser(string campo, string tabla, string criterioBusqueda)
+        public override object selectUser(string tabla, string criterioBusqueda)
         {
             List<object[]> result = new List<object[]>();
             try
@@ -301,6 +301,11 @@ namespace practica_PDV.CRUD_BACK
                 }
             }
             return result;
+        }
+
+        public override List<object[]> selectAll(string tabla, string criterioBusqueda)
+        {
+            throw new NotImplementedException();
         }
     }
 }

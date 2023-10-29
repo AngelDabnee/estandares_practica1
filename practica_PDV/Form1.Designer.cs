@@ -28,79 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.email = new System.Windows.Forms.Label();
-            this.login = new System.Windows.Forms.Button();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.Label();
-            this.txt_password = new System.Windows.Forms.TextBox();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.panelControls = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.panelFrom = new System.Windows.Forms.Panel();
+            this.panelLogo.SuspendLayout();
+            this.logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panelControls.SuspendLayout();
             this.SuspendLayout();
             // 
-            // email
+            // panelLogo
             // 
-            this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(368, 118);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(46, 16);
-            this.email.TabIndex = 0;
-            this.email.Text = "EMAIL";
+            this.panelLogo.Controls.Add(this.logo);
+            this.panelLogo.Controls.Add(this.panelControls);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(238, 549);
+            this.panelLogo.TabIndex = 0;
             // 
-            // login
+            // logo
             // 
-            this.login.Location = new System.Drawing.Point(354, 311);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(75, 23);
-            this.login.TabIndex = 2;
-            this.login.Text = "LOGIN";
-            this.login.UseVisualStyleBackColor = true;
-            this.login.Click += new System.EventHandler(this.login_Click);
+            this.logo.Controls.Add(this.pictureBoxLogo);
+            this.logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logo.Location = new System.Drawing.Point(0, 0);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(238, 100);
+            this.logo.TabIndex = 3;
             // 
-            // txt_email
+            // pictureBoxLogo
             // 
-            this.txt_email.Location = new System.Drawing.Point(296, 160);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(198, 22);
-            this.txt_email.TabIndex = 3;
+            this.pictureBoxLogo.BackgroundImage = global::practica_PDV.Properties.Resources.FondoParaUsuarios;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(238, 100);
+            this.pictureBoxLogo.TabIndex = 3;
+            this.pictureBoxLogo.TabStop = false;
             // 
-            // password
+            // panelControls
             // 
-            this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(343, 217);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(86, 16);
-            this.password.TabIndex = 1;
-            this.password.Text = "PASSWORD";
+            this.panelControls.Controls.Add(this.btnBuscar);
+            this.panelControls.Location = new System.Drawing.Point(0, 101);
+            this.panelControls.Name = "panelControls";
+            this.panelControls.Size = new System.Drawing.Size(238, 242);
+            this.panelControls.TabIndex = 1;
             // 
-            // txt_password
+            // btnBuscar
             // 
-            this.txt_password.Location = new System.Drawing.Point(296, 248);
-            this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(198, 22);
-            this.txt_password.TabIndex = 4;
+            this.btnBuscar.AutoSize = true;
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(0, 0);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(238, 68);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.Text = "Productos";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // panelFrom
+            // 
+            this.panelFrom.Location = new System.Drawing.Point(244, 0);
+            this.panelFrom.Name = "panelFrom";
+            this.panelFrom.Size = new System.Drawing.Size(969, 549);
+            this.panelFrom.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txt_password);
-            this.Controls.Add(this.txt_email);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.email);
+            this.ClientSize = new System.Drawing.Size(1219, 549);
+            this.Controls.Add(this.panelFrom);
+            this.Controls.Add(this.panelLogo);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panelLogo.ResumeLayout(false);
+            this.logo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.panelControls.ResumeLayout(false);
+            this.panelControls.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label email;
-        private System.Windows.Forms.Button login;
-        private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.Label password;
-        private System.Windows.Forms.TextBox txt_password;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Panel panelControls;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Panel panelFrom;
+        private System.Windows.Forms.Panel logo;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }
 

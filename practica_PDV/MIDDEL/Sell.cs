@@ -69,7 +69,7 @@ namespace practica_PDV.MIDDEL
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 result = -1; 
                 Sell.mesError = bd.mesError;
