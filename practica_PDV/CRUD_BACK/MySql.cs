@@ -10,7 +10,7 @@ namespace practica_PDV.CRUD_BACK
     public class MySql : CRUDs_BD
     {
         //Conexión a la BD: 
-        MySqlConnection con; 
+        MySqlConnection con;
         MySqlCommand command;
         MySqlDataReader reader;
         public MySql(string host = "localhost", string us = "root", string pwd = "", string bd = "practica_PDV", string puerto = "3306") : base()
@@ -27,7 +27,7 @@ namespace practica_PDV.CRUD_BACK
             bool result = false;
             try
             {
-                if(con.State == System.Data.ConnectionState.Closed)
+                if (con.State == System.Data.ConnectionState.Closed)
                 {
                     con.Open();
                     string camposConcat = "";
@@ -35,7 +35,7 @@ namespace practica_PDV.CRUD_BACK
                     {
                         camposConcat += campo + ",";//A cada campo lo separamos por una coma. 
                     }
-                    camposConcat = camposConcat.Remove(camposConcat.Length-1);//quitamos la ultima coma
+                    camposConcat = camposConcat.Remove(camposConcat.Length - 1);//quitamos la ultima coma
                     string valoresInsert = "";
                     for (int i = 0; i < valores.Count; i++)
                     {
@@ -50,7 +50,8 @@ namespace practica_PDV.CRUD_BACK
                     {
                         result = true;
                     }
-                    else {
+                    else
+                    {
                         result = false;
                         this.mesError = "No se registro algo";
                     }
@@ -66,13 +67,14 @@ namespace practica_PDV.CRUD_BACK
             {
                 this.mesError = $"ERROR AL REGISTRAR {ex.Message}";
             }
-            finally 
+            finally
             {
                 //cerramos la conexión. 
-                if (con.State == System.Data.ConnectionState.Open) { 
+                if (con.State == System.Data.ConnectionState.Open)
+                {
                     con.Close();
                 }
-               
+
             }
             return result;
 
@@ -83,16 +85,18 @@ namespace practica_PDV.CRUD_BACK
             bool result = false;
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed) {
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
                     con.Open();
-                    command = new MySqlCommand($"DELETE FROM {tabla} WHERE id = {id}"); 
+                    command = new MySqlCommand($"DELETE FROM {tabla} WHERE product_id = {id}");
                     command.Connection = con;
                     int res = command.ExecuteNonQuery();
                     if (res == 1)
                     {
                         result = true;
                     }
-                    else { 
+                    else
+                    {
                         result = false;
                     }
                 }
@@ -102,7 +106,8 @@ namespace practica_PDV.CRUD_BACK
             {
                 this.mesError = $"LA BASE DE DATOS NO PUDO ELIMINAR EL REGISTRO {mex.Message}";
             }
-            finally {
+            finally
+            {
                 if (con.State == System.Data.ConnectionState.Open)
                 {
                     con.Close();
@@ -111,7 +116,7 @@ namespace practica_PDV.CRUD_BACK
             return result;
         }
         public override bool update(string tabla, List<string> campos, List<ValoresAInsertar> valores, int id)
-        { 
+        {
             bool result = false;
             try
             {
@@ -166,13 +171,15 @@ namespace practica_PDV.CRUD_BACK
             List<object[]> result = new List<object[]>();
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed) {
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
                     con.Open();
                     command = new MySqlCommand($"SELECT * FROM {tabla};");
-                    command.Connection = con; 
+                    command.Connection = con;
                     reader = command.ExecuteReader();
-                    if (reader.HasRows) { 
-                        while (reader.Read()) 
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
                         {
                             object[] row = new object[reader.FieldCount];
                             for (int i = 0; i < reader.FieldCount; i++)
@@ -194,12 +201,15 @@ namespace practica_PDV.CRUD_BACK
             {
                 this.mesError = $"ERROR EN LA CONSULTA {mex.Message}";
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 this.mesError = $"Error {ex.Message}";
             }
-            finally {
-                if (con.State == System.Data.ConnectionState.Open) {
-                    con.Close() ;   
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
                 }
             }
             return result;
@@ -305,7 +315,42 @@ namespace practica_PDV.CRUD_BACK
 
         public override List<object[]> selectAll(string tabla, string criterioBusqueda)
         {
-            throw new NotImplementedException();
+            List<object[]> resultado = new List<object[]>();
+            try
+            {
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
+                    con.Open();
+                    command = new MySqlCommand($"SELECT * FROM {tabla} WHERE {criterioBusqueda}");
+                    command.Connection = con;
+                    reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            object[] registro = new object[reader.FieldCount];
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                registro[i] = reader.GetValue(i);
+                            }
+                            resultado.Add(registro);
+                        }
+                    }
+                    else
+                    {
+                        this.mesError = $"ERROR AL ENCONTAR REGISTRO {tabla}.";
+                        resultado = new List<object[]>();
+                    }
+                }
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            return resultado; 
         }
     }
 }

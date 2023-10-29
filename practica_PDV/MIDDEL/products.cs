@@ -91,10 +91,11 @@ namespace practica_PDV.MIDDEL
             }
             return price;
         }
-        public List<object[]> selectForName(string name) 
+        public List<object[]> selectForName(string name)
         {
-            List<object[]> results = this.bd.selectOne("name","products","name=" + "'name'");
+            List<object[]> results = this.bd.selectAll("products","name=" + "'" + name +"'");
             return results;
         }
+
     }
 }

@@ -37,6 +37,12 @@ namespace practica_PDV
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             openHijoFrom(new FromSelect());
+            panelControls.Hide();
+        }
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+            panelControls.Show();
         }
     }
 }

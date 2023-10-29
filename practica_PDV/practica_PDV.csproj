@@ -177,8 +177,5 @@
   <ItemGroup>
     <Folder Include="img\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FondoParaUsuarios.jpeg" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

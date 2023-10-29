@@ -18,6 +18,7 @@ namespace practica_PDV.FromProductos
     {
         CRUDs_BD bd;
         Products products = new Products();
+        int identi; 
         
         public FromSelect()
         {
@@ -29,18 +30,20 @@ namespace practica_PDV.FromProductos
 
             dataGridProduct.ReadOnly = true;
             this.cargarDatos();
+            menu.Hide();
         }
 
         private void iconBuscar_Click(object sender, EventArgs e)
         {
             dataGridProduct.Rows.Clear();
-            List<object[]>product = products.selectForName(txtName.Text);
-            for(int i = 0;i < product.Count;i++) 
+            List<object[]> datos = products.selectForName(txtName.Text);//guardo la lista de object según lo que quiero mostrar, en una variable de object llamada datos
+            for (int i = 0; i < datos.Count; i++)//recorro toda la lista de object
             {
-                dataGridProduct.Rows.Add(product[i]);
+                dataGridProduct.Rows.Add(datos[i]);//al recorrerla, le agrego los datos que tengo en la variable en el indice [i]
             }
-            this.cargarDatos();
+
         }
+
         public void cargarDatos() 
         {
             dataGridProduct.Rows.Clear();
@@ -56,6 +59,62 @@ namespace practica_PDV.FromProductos
             Form nuevo = new Form();
             nuevo = new FormInsert();
             nuevo.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (menu.Visible == false)
+            {
+                menu.Show();
+            }
+            else
+            {
+                menu.Hide();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult delete = MessageBox.Show("¿DESEAS CONTINUAR","ELIMINAR",MessageBoxButtons.YesNo);
+            if(delete == DialogResult.Yes) 
+            {
+                bool res = products.delete(this.identi);
+                if (res == false)
+                {
+                    MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
+                    this.limpiarForm(true);
+                    this.FromSelect_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR AL ELIMINAR PRODUCTO " + Products.msgError);
+                }
+                this.limpiarForm(false);
+            }
+        }
+        public void limpiarForm(bool habilita)
+        {
+            if (habilita)
+            {
+                txtName.Enabled = true;
+                txtName.Clear();
+
+            }
+            else
+            {
+                txtName.Enabled = false;
+                txtName.Clear();
+            }
+        }
+
+        private void dataGridProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int celdas = e.RowIndex;
+                txtId.Text = dataGridProduct.Rows[celdas].Cells[0].ToString();
+                this.identi = int.Parse(txtId.Text);
+            }
         }
     }
 }
