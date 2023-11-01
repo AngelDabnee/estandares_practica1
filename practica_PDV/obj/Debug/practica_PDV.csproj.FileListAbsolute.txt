@@ -45,3 +45,4 @@ C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.LOG
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FromProductos.FromSelect.resources
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromInsert.FormInsert.resources
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromCustomers.FormCustomers.resources
+C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromCustomers.FormNewCustomers.FormInsertCustomer.resources

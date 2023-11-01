@@ -1,5 +1,6 @@
 ﻿using practica_PDV.FromProductos;
 using practica_PDV.FRONT.FromCustomers;
+using practica_PDV.FRONT.FromCustomers.FormNewCustomers;
 using practica_PDV.FRONT.FromInsert;
 using practica_PDV.LOGIN;
 using System;

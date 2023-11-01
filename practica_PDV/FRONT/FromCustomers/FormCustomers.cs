@@ -1,4 +1,6 @@
 ﻿using practica_PDV.CRUD_BACK;
+using practica_PDV.FRONT.FromCustomers.FormNewCustomers;
+using practica_PDV.FRONT.FromInsert;
 using practica_PDV.MIDDEL;
 using System;
 using System.Collections.Generic;
@@ -41,5 +43,11 @@ namespace practica_PDV.FRONT.FromCustomers
             }
         }
 
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            Form nuevo = new Form();
+            nuevo = new FormInsertCustomer();
+            nuevo.Show();
+        }
     }
 }
