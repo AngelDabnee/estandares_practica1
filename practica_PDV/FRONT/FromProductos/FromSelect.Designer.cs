@@ -71,9 +71,9 @@
             this.labelTitulo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.Location = new System.Drawing.Point(518, 18);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(192, 28);
+            this.labelTitulo.Size = new System.Drawing.Size(121, 28);
             this.labelTitulo.TabIndex = 0;
-            this.labelTitulo.Text = "Buscar Producto";
+            this.labelTitulo.Text = "Productos";
             // 
             // txtName
             // 

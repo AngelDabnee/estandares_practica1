@@ -31,15 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.panelFrom = new System.Windows.Forms.Panel();
+            this.panelFormulario = new System.Windows.Forms.Panel();
+            this.panelForm = new System.Windows.Forms.Panel();
             this.panelLogo.SuspendLayout();
             this.panelControls.SuspendLayout();
             this.logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.panelFrom.SuspendLayout();
+            this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLogo
@@ -55,12 +57,27 @@
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.btnClientes);
             this.panelControls.Controls.Add(this.btnBuscar);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControls.Location = new System.Drawing.Point(0, 100);
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(238, 242);
             this.panelControls.TabIndex = 1;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.AutoSize = true;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Location = new System.Drawing.Point(0, 68);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(238, 68);
+            this.btnClientes.TabIndex = 3;
+            this.btnClientes.TabStop = false;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnBuscar
             // 
@@ -97,16 +114,27 @@
             this.pictureBoxLogo.TabStop = false;
             this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
-            // panelFrom
+            // panelFormulario
             // 
-            this.panelFrom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelFrom.BackgroundImage")));
-            this.panelFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelFrom.Controls.Add(this.panelLogo);
-            this.panelFrom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFrom.Location = new System.Drawing.Point(0, 0);
-            this.panelFrom.Name = "panelFrom";
-            this.panelFrom.Size = new System.Drawing.Size(1219, 549);
-            this.panelFrom.TabIndex = 2;
+            this.panelFormulario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelFormulario.BackgroundImage")));
+            this.panelFormulario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelFormulario.Controls.Add(this.panelForm);
+            this.panelFormulario.Controls.Add(this.panelLogo);
+            this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormulario.Location = new System.Drawing.Point(0, 0);
+            this.panelFormulario.Name = "panelFormulario";
+            this.panelFormulario.Size = new System.Drawing.Size(1219, 549);
+            this.panelFormulario.TabIndex = 2;
+            // 
+            // panelForm
+            // 
+            this.panelForm.BackColor = System.Drawing.Color.Transparent;
+            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelForm.Location = new System.Drawing.Point(238, 0);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(981, 549);
+            this.panelForm.TabIndex = 1;
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // Form1
             // 
@@ -114,7 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1219, 549);
-            this.Controls.Add(this.panelFrom);
+            this.Controls.Add(this.panelFormulario);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -123,7 +151,7 @@
             this.panelControls.PerformLayout();
             this.logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            this.panelFrom.ResumeLayout(false);
+            this.panelFormulario.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -133,9 +161,11 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Panel panelFrom;
+        private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.Panel logo;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Panel panelForm;
     }
 }
 

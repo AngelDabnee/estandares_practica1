@@ -121,7 +121,7 @@
   <data name="pictureBoxLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfsAAAEGCAYAAABihzwVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAA/7JJREFUeF7svQd4XcW1PX4l3arbr3rvzbLcG8Z0CKSTQnoBkhBCCT303l1kW3Kj
+        cQAAEnEB89x6jgAA/7JJREFUeF7svQd4XcW1PX4l3arbr3rvzbLcG8Z0CKSTQnoBkhBCCT303l1kW3Kj
         vnRSII30nhBCSCAJIZVmG9N7kvdL3v/lvbf+a83cLR1fZFootiV93/r2nDnl6uyzZ6+9Z+bMCVVWVmJH
         QiKR2ArBOisHj5/CxCjVVzKZRCwWc7KhoQGdnZ2or69HLpdDc3OzQzqddsemUqmx6+h4wcq6XjweH9s/
         WVB6z9qWPvL5vNNje3s72traUFNTg0gk4vZns1lkMhmnz4nsVnVBlO6fwhQMZh9mh5Jqz5Lap7ZbVVWF
@@ -2269,7 +2269,7 @@
         gg==
 </value>
   </data>
-  <data name="panelFrom.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="panelFormulario.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwg
         JC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIy

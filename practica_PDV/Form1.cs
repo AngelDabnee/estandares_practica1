@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using practica_PDV.FromProductos;
+using practica_PDV.FRONT.FromCustomers;
 
 namespace practica_PDV
 {
@@ -30,8 +31,8 @@ namespace practica_PDV
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
-            panelFrom.Controls.Add(form);
-            panelFrom.Tag = form;
+            panelForm.Controls.Add(form);
+            panelForm.Tag = form;
             form.Show();
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -43,6 +44,17 @@ namespace practica_PDV
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
             panelControls.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            openHijoFrom(new FormCustomers());
+            panelControls.Hide();
+        }
+
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
