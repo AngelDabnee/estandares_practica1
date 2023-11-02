@@ -47,6 +47,7 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_in_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelBusqueda.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -62,14 +63,14 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1219, 63);
+            this.panelTitulo.Size = new System.Drawing.Size(1249, 63);
             this.panelTitulo.TabIndex = 0;
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(518, 18);
+            this.labelTitulo.Location = new System.Drawing.Point(362, 21);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(121, 28);
             this.labelTitulo.TabIndex = 0;
@@ -78,7 +79,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(427, 85);
+            this.txtName.Location = new System.Drawing.Point(298, 128);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(233, 36);
             this.txtName.TabIndex = 0;
@@ -94,12 +95,12 @@
             this.panelBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBusqueda.Location = new System.Drawing.Point(0, 63);
             this.panelBusqueda.Name = "panelBusqueda";
-            this.panelBusqueda.Size = new System.Drawing.Size(1219, 486);
+            this.panelBusqueda.Size = new System.Drawing.Size(1249, 741);
             this.panelBusqueda.TabIndex = 1;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(507, 150);
+            this.txtId.Location = new System.Drawing.Point(401, 216);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 7;
@@ -110,19 +111,20 @@
             this.panelMenu.Controls.Add(this.menu);
             this.panelMenu.Controls.Add(this.btnMenu);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMenu.Location = new System.Drawing.Point(1023, 0);
+            this.panelMenu.Location = new System.Drawing.Point(1053, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(196, 486);
+            this.panelMenu.Size = new System.Drawing.Size(196, 741);
             this.panelMenu.TabIndex = 6;
             // 
             // menu
             // 
+            this.menu.Controls.Add(this.btnEdit);
             this.menu.Controls.Add(this.btnInsert);
             this.menu.Controls.Add(this.btnEliminar);
             this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menu.Location = new System.Drawing.Point(0, 64);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(196, 422);
+            this.menu.Size = new System.Drawing.Size(196, 677);
             this.menu.TabIndex = 5;
             // 
             // btnInsert
@@ -170,7 +172,7 @@
             this.iconBuscar.IconColor = System.Drawing.Color.Black;
             this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconBuscar.IconSize = 40;
-            this.iconBuscar.Location = new System.Drawing.Point(666, 76);
+            this.iconBuscar.Location = new System.Drawing.Point(561, 122);
             this.iconBuscar.Name = "iconBuscar";
             this.iconBuscar.Size = new System.Drawing.Size(66, 53);
             this.iconBuscar.TabIndex = 1;
@@ -182,13 +184,14 @@
             this.panelDataGrid.BackColor = System.Drawing.Color.Transparent;
             this.panelDataGrid.Controls.Add(this.dataGridProduct);
             this.panelDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelDataGrid.Location = new System.Drawing.Point(0, 392);
+            this.panelDataGrid.Location = new System.Drawing.Point(0, 519);
             this.panelDataGrid.Name = "panelDataGrid";
-            this.panelDataGrid.Size = new System.Drawing.Size(1219, 157);
+            this.panelDataGrid.Size = new System.Drawing.Size(1249, 285);
             this.panelDataGrid.TabIndex = 3;
             // 
             // dataGridProduct
             // 
+            this.dataGridProduct.AllowUserToOrderColumns = true;
             this.dataGridProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridProduct.BackgroundColor = System.Drawing.Color.Gray;
@@ -201,13 +204,15 @@
             this.Description,
             this.Price,
             this.quantity_in_stock});
-            this.dataGridProduct.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dataGridProduct.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridProduct.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridProduct.Location = new System.Drawing.Point(278, 0);
+            this.dataGridProduct.Location = new System.Drawing.Point(0, 0);
             this.dataGridProduct.Name = "dataGridProduct";
+            this.dataGridProduct.ReadOnly = true;
             this.dataGridProduct.RowHeadersWidth = 51;
             this.dataGridProduct.RowTemplate.Height = 24;
-            this.dataGridProduct.Size = new System.Drawing.Size(941, 157);
+            this.dataGridProduct.Size = new System.Drawing.Size(1249, 285);
             this.dataGridProduct.TabIndex = 0;
             this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
             // 
@@ -216,30 +221,47 @@
             this.product_id.HeaderText = "id";
             this.product_id.MinimumWidth = 6;
             this.product_id.Name = "product_id";
+            this.product_id.ReadOnly = true;
             // 
             // name
             // 
             this.name.HeaderText = "Name";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // Description
             // 
             this.Description.HeaderText = "Description";
             this.Description.MinimumWidth = 6;
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // Price
             // 
             this.Price.HeaderText = "Price";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // quantity_in_stock
             // 
             this.quantity_in_stock.HeaderText = "Sock";
             this.quantity_in_stock.MinimumWidth = 6;
             this.quantity_in_stock.Name = "quantity_in_stock";
+            this.quantity_in_stock.ReadOnly = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEdit.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(0, 128);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(196, 64);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // FromSelect
             // 
@@ -247,14 +269,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1219, 549);
+            this.ClientSize = new System.Drawing.Size(1249, 804);
             this.Controls.Add(this.panelDataGrid);
             this.Controls.Add(this.panelBusqueda);
             this.Controls.Add(this.panelTitulo);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FromSelect";
             this.Text = "FromSelect";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FromSelect_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
@@ -290,5 +314,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity_in_stock;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

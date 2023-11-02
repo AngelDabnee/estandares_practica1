@@ -114,10 +114,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FromLogin\Login.cs">
+    <Compile Include="FRONT\FromLogin\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FromLogin\Login.Designer.cs">
+    <Compile Include="FRONT\FromLogin\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="FRONT\FromCustomers\FormCustomers.cs">
@@ -132,10 +132,16 @@
     <Compile Include="FRONT\FromCustomers\FormNewCustomers\FormInsertCustomer.Designer.cs">
       <DependentUpon>FormInsertCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRONT\FromInsert\FormInsert.cs">
+    <Compile Include="FRONT\FromCustomers\FormUpdateCustomers\FromUpdateC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRONT\FromInsert\FormInsert.Designer.cs">
+    <Compile Include="FRONT\FromCustomers\FormUpdateCustomers\FromUpdateC.Designer.cs">
+      <DependentUpon>FromUpdateC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRONT\FromProductos\FromInsert\FormInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromProductos\FromInsert\FormInsert.Designer.cs">
       <DependentUpon>FormInsert.cs</DependentUpon>
     </Compile>
     <Compile Include="FRONT\FromProductos\FromSelect.cs">
@@ -154,7 +160,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FromLogin\Login.resx">
+    <EmbeddedResource Include="FRONT\FromLogin\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromCustomers\FormCustomers.resx">
@@ -163,7 +169,10 @@
     <EmbeddedResource Include="FRONT\FromCustomers\FormNewCustomers\FormInsertCustomer.resx">
       <DependentUpon>FormInsertCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRONT\FromInsert\FormInsert.resx">
+    <EmbeddedResource Include="FRONT\FromCustomers\FormUpdateCustomers\FromUpdateC.resx">
+      <DependentUpon>FromUpdateC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromProductos\FromInsert\FormInsert.resx">
       <DependentUpon>FormInsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromProductos\FromSelect.resx">

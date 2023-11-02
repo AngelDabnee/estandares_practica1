@@ -29,20 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.panelFormulario = new System.Windows.Forms.Panel();
+            this.panelForm = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.panelFormulario = new System.Windows.Forms.Panel();
-            this.panelForm = new System.Windows.Forms.Panel();
+            this.panelFormulario.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelControls.SuspendLayout();
             this.logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelFormulario
+            // 
+            this.panelFormulario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelFormulario.BackgroundImage")));
+            this.panelFormulario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelFormulario.Controls.Add(this.panelForm);
+            this.panelFormulario.Controls.Add(this.panelLogo);
+            this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormulario.Location = new System.Drawing.Point(0, 0);
+            this.panelFormulario.Name = "panelFormulario";
+            this.panelFormulario.Size = new System.Drawing.Size(1249, 804);
+            this.panelFormulario.TabIndex = 2;
+            // 
+            // panelForm
+            // 
+            this.panelForm.BackColor = System.Drawing.Color.Transparent;
+            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelForm.Location = new System.Drawing.Point(238, 0);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(1011, 804);
+            this.panelForm.TabIndex = 1;
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // panelLogo
             // 
@@ -52,7 +74,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(238, 549);
+            this.panelLogo.Size = new System.Drawing.Size(238, 804);
             this.panelLogo.TabIndex = 0;
             // 
             // panelControls
@@ -114,44 +136,23 @@
             this.pictureBoxLogo.TabStop = false;
             this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
-            // panelFormulario
-            // 
-            this.panelFormulario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelFormulario.BackgroundImage")));
-            this.panelFormulario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelFormulario.Controls.Add(this.panelForm);
-            this.panelFormulario.Controls.Add(this.panelLogo);
-            this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormulario.Location = new System.Drawing.Point(0, 0);
-            this.panelFormulario.Name = "panelFormulario";
-            this.panelFormulario.Size = new System.Drawing.Size(1219, 549);
-            this.panelFormulario.TabIndex = 2;
-            // 
-            // panelForm
-            // 
-            this.panelForm.BackColor = System.Drawing.Color.Transparent;
-            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForm.Location = new System.Drawing.Point(238, 0);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(981, 549);
-            this.panelForm.TabIndex = 1;
-            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1219, 549);
+            this.ClientSize = new System.Drawing.Size(1249, 804);
             this.Controls.Add(this.panelFormulario);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panelFormulario.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
             this.logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            this.panelFormulario.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

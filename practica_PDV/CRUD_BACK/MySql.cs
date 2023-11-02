@@ -124,12 +124,13 @@ namespace practica_PDV.CRUD_BACK
                 {
                     con.Open();
                     string camposConcat = "";
-                    foreach (var campo in campos)
+                    for (int i = 0; i < campos.Count; i++) 
                     {
-                        camposConcat += campo + ",";//A cada campo lo separamos por una coma. 
+                        camposConcat += campos[i] + "=" + (valores[i].llevaApostrofes ? "'" + valores[i].valor + "'," : valores[i].valor + ",");
+
                     }
                     camposConcat = camposConcat.Remove(camposConcat.Length - 1);//quitamos la ultima coma
-                    command = new MySqlCommand($"UPDATE {tabla} SET {camposConcat} WHERE product_id = {id};");
+                    command = new MySqlCommand($"UPDATE {tabla} SET {camposConcat} WHERE id = {id};");
                     command.Connection = con;
                     int res = command.ExecuteNonQuery();
                     if (res == 1)

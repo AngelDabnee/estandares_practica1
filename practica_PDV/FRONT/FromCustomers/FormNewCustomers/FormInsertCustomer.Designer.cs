@@ -51,14 +51,14 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(800, 100);
+            this.panelTitulo.Size = new System.Drawing.Size(1000, 100);
             this.panelTitulo.TabIndex = 0;
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(285, 40);
+            this.labelTitulo.Location = new System.Drawing.Point(341, 43);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(234, 24);
             this.labelTitulo.TabIndex = 0;
@@ -67,7 +67,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(165, 160);
+            this.txtName.Location = new System.Drawing.Point(215, 232);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(170, 30);
             this.txtName.TabIndex = 1;
@@ -75,7 +75,7 @@
             // txtemail
             // 
             this.txtemail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(165, 219);
+            this.txtemail.Location = new System.Drawing.Point(215, 291);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(170, 30);
             this.txtemail.TabIndex = 2;
@@ -83,7 +83,7 @@
             // txtphone
             // 
             this.txtphone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtphone.Location = new System.Drawing.Point(570, 154);
+            this.txtphone.Location = new System.Drawing.Point(620, 226);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(170, 30);
             this.txtphone.TabIndex = 3;
@@ -92,7 +92,7 @@
             // txtaddress
             // 
             this.txtaddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress.Location = new System.Drawing.Point(570, 217);
+            this.txtaddress.Location = new System.Drawing.Point(620, 289);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(170, 30);
             this.txtaddress.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.labelname.BackColor = System.Drawing.Color.Transparent;
             this.labelname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelname.ForeColor = System.Drawing.Color.White;
-            this.labelname.Location = new System.Drawing.Point(49, 160);
+            this.labelname.Location = new System.Drawing.Point(99, 232);
             this.labelname.Name = "labelname";
             this.labelname.Size = new System.Drawing.Size(84, 24);
             this.labelname.TabIndex = 5;
@@ -115,7 +115,7 @@
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
             this.labelEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(56, 225);
+            this.labelEmail.Location = new System.Drawing.Point(106, 297);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(61, 24);
             this.labelEmail.TabIndex = 6;
@@ -127,7 +127,7 @@
             this.labelPhone.BackColor = System.Drawing.Color.Transparent;
             this.labelPhone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPhone.ForeColor = System.Drawing.Color.White;
-            this.labelPhone.Location = new System.Drawing.Point(451, 160);
+            this.labelPhone.Location = new System.Drawing.Point(501, 232);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(92, 24);
             this.labelPhone.TabIndex = 7;
@@ -139,7 +139,7 @@
             this.labelAddress.BackColor = System.Drawing.Color.Transparent;
             this.labelAddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddress.ForeColor = System.Drawing.Color.White;
-            this.labelAddress.Location = new System.Drawing.Point(444, 219);
+            this.labelAddress.Location = new System.Drawing.Point(494, 291);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(99, 24);
             this.labelAddress.TabIndex = 8;
@@ -148,7 +148,7 @@
             // btnConfirmar
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Location = new System.Drawing.Point(236, 318);
+            this.btnConfirmar.Location = new System.Drawing.Point(238, 390);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(125, 45);
             this.btnConfirmar.TabIndex = 9;
@@ -159,7 +159,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(448, 318);
+            this.btnCancelar.Location = new System.Drawing.Point(539, 394);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 41);
             this.btnCancelar.TabIndex = 10;
@@ -173,7 +173,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 608);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.labelAddress);
@@ -185,6 +185,9 @@
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.panelTitulo);
+            this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormInsertCustomer";
             this.Text = "FormInsertCustomer";
             this.panelTitulo.ResumeLayout(false);
