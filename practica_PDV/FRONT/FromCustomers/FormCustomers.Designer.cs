@@ -38,20 +38,20 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addresss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelActions = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.iconBuscar = new FontAwesome.Sharp.IconButton();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelAction = new System.Windows.Forms.Panel();
             this.panelTitulo.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
-            this.panelActions.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelAction.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -95,8 +95,8 @@
             this.email,
             this.phone,
             this.addresss});
-            this.dataGridCustomers.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridCustomers.Location = new System.Drawing.Point(0, 6);
+            this.dataGridCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridCustomers.Location = new System.Drawing.Point(0, 0);
             this.dataGridCustomers.Name = "dataGridCustomers";
             this.dataGridCustomers.ReadOnly = true;
             this.dataGridCustomers.RowHeadersVisible = false;
@@ -104,7 +104,7 @@
             this.dataGridCustomers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridCustomers.RowTemplate.Height = 24;
             this.dataGridCustomers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridCustomers.Size = new System.Drawing.Size(1249, 215);
+            this.dataGridCustomers.Size = new System.Drawing.Size(1249, 221);
             this.dataGridCustomers.TabIndex = 0;
             this.dataGridCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomers_CellContentClick);
             // 
@@ -143,24 +143,11 @@
             this.addresss.Name = "addresss";
             this.addresss.ReadOnly = true;
             // 
-            // panelActions
-            // 
-            this.panelActions.BackColor = System.Drawing.Color.Transparent;
-            this.panelActions.Controls.Add(this.btnEditar);
-            this.panelActions.Controls.Add(this.btnDelete);
-            this.panelActions.Controls.Add(this.btnInsert);
-            this.panelActions.Controls.Add(this.panelMenu);
-            this.panelActions.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelActions.Location = new System.Drawing.Point(1049, 100);
-            this.panelActions.Name = "panelActions";
-            this.panelActions.Size = new System.Drawing.Size(200, 483);
-            this.panelActions.TabIndex = 2;
-            // 
             // btnEditar
             // 
             this.btnEditar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(0, 196);
+            this.btnEditar.Location = new System.Drawing.Point(0, 64);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(200, 64);
             this.btnEditar.TabIndex = 3;
@@ -172,7 +159,7 @@
             // 
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(0, 132);
+            this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(200, 64);
             this.btnDelete.TabIndex = 2;
@@ -184,23 +171,13 @@
             // 
             this.btnInsert.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInsert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(0, 68);
+            this.btnInsert.Location = new System.Drawing.Point(0, 128);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(200, 64);
             this.btnInsert.TabIndex = 1;
             this.btnInsert.Text = "Nuevo";
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
-            this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 68);
-            this.panelMenu.TabIndex = 0;
             // 
             // btnMenu
             // 
@@ -212,6 +189,7 @@
             this.btnMenu.TabIndex = 0;
             this.btnMenu.Text = "Herramientas";
             this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // txtBuscar
             // 
@@ -243,6 +221,30 @@
             this.iconBuscar.UseVisualStyleBackColor = true;
             this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
             // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMenu.Controls.Add(this.panelAction);
+            this.panelMenu.Controls.Add(this.btnMenu);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMenu.Location = new System.Drawing.Point(1049, 100);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(200, 483);
+            this.panelMenu.TabIndex = 6;
+            // 
+            // panelAction
+            // 
+            this.panelAction.BackColor = System.Drawing.Color.Transparent;
+            this.panelAction.Controls.Add(this.btnInsert);
+            this.panelAction.Controls.Add(this.btnEditar);
+            this.panelAction.Controls.Add(this.btnDelete);
+            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAction.Location = new System.Drawing.Point(0, 64);
+            this.panelAction.Name = "panelAction";
+            this.panelAction.Size = new System.Drawing.Size(200, 419);
+            this.panelAction.TabIndex = 1;
+            this.panelAction.Visible = false;
+            // 
             // FormCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,10 +252,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 804);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconBuscar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.panelActions);
             this.Controls.Add(this.panelDataGrid);
             this.Controls.Add(this.panelTitulo);
             this.Name = "FormCustomers";
@@ -264,8 +266,8 @@
             this.panelTitulo.PerformLayout();
             this.panelDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).EndInit();
-            this.panelActions.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelAction.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,13 +278,11 @@
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.DataGridView dataGridCustomers;
-        private System.Windows.Forms.Panel panelActions;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn addresss;
-        private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button btnDelete;
@@ -291,5 +291,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txtId;
         private FontAwesome.Sharp.IconButton iconBuscar;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panelAction;
     }
 }

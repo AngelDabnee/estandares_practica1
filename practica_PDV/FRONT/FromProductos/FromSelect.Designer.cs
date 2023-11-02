@@ -36,6 +36,7 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_in_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelBusqueda.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -126,6 +126,19 @@
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(196, 677);
             this.menu.TabIndex = 5;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEdit.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(0, 128);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(196, 64);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnInsert
             // 
@@ -250,18 +263,6 @@
             this.quantity_in_stock.MinimumWidth = 6;
             this.quantity_in_stock.Name = "quantity_in_stock";
             this.quantity_in_stock.ReadOnly = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.AutoSize = true;
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEdit.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(0, 128);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(196, 64);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Editar";
-            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // FromSelect
             // 

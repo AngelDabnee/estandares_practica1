@@ -1,5 +1,6 @@
 ﻿using practica_PDV.CRUD_BACK;
 using practica_PDV.FRONT.FromInsert;
+using practica_PDV.FRONT.FromProductos.FromUpdate;
 using practica_PDV.MIDDEL;
 using System;
 using System.Collections.Generic;
@@ -114,6 +115,13 @@ namespace practica_PDV.FromProductos
                 txtId.Text = dataGridProduct.Rows[celdas].Cells[0].Value.ToString();
                 this.identi = (int)dataGridProduct.Rows[celdas].Cells[0].Value;
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Form nuevo = new Form();
+            nuevo = new FormUpdateProduc();
+            nuevo.Show();
         }
     }
 }

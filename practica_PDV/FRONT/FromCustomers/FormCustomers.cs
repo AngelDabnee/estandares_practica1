@@ -104,5 +104,17 @@ namespace practica_PDV.FRONT.FromCustomers
             nuevo = new FromUpdateC();
             nuevo.Show();
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (panelAction.Visible == false)
+            {
+                panelAction.Show();
+            }
+            else
+            {
+                panelAction.Hide();
+            }
+        }
     }
 }

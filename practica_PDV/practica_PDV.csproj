@@ -150,6 +150,12 @@
     <Compile Include="FRONT\FromProductos\FromSelect.Designer.cs">
       <DependentUpon>FromSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRONT\FromProductos\FromUpdate\FormUpdateProduc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromProductos\FromUpdate\FormUpdateProduc.Designer.cs">
+      <DependentUpon>FormUpdateProduc.cs</DependentUpon>
+    </Compile>
     <Compile Include="MIDDEL\Customers.cs" />
     <Compile Include="MIDDEL\Products.cs" />
     <Compile Include="MIDDEL\ProductsToSell.cs" />
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromProductos\FromSelect.resx">
       <DependentUpon>FromSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromProductos\FromUpdate\FormUpdateProduc.resx">
+      <DependentUpon>FormUpdateProduc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
