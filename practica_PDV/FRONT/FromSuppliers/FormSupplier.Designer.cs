@@ -30,39 +30,81 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSupplier));
             this.panelData = new System.Windows.Forms.Panel();
+            this.dataGridSupplier = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelId = new System.Windows.Forms.Label();
             this.iconBuscar = new FontAwesome.Sharp.IconButton();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panelBuscar = new System.Windows.Forms.Panel();
             this.panelAction = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelHerramienta = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.panelHerramienta = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.panelData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSupplier)).BeginInit();
             this.panelBuscar.SuspendLayout();
             this.panelAction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panelHerramienta.SuspendLayout();
             this.panelBotones.SuspendLayout();
+            this.panelHerramienta.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Transparent;
-            this.panelData.Controls.Add(this.dataGridView1);
+            this.panelData.Controls.Add(this.dataGridSupplier);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelData.Location = new System.Drawing.Point(634, 0);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(615, 804);
             this.panelData.TabIndex = 0;
+            // 
+            // dataGridSupplier
+            // 
+            this.dataGridSupplier.AllowUserToDeleteRows = false;
+            this.dataGridSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridSupplier.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.email});
+            this.dataGridSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridSupplier.Location = new System.Drawing.Point(0, 0);
+            this.dataGridSupplier.Name = "dataGridSupplier";
+            this.dataGridSupplier.ReadOnly = true;
+            this.dataGridSupplier.RowHeadersVisible = false;
+            this.dataGridSupplier.RowHeadersWidth = 51;
+            this.dataGridSupplier.RowTemplate.Height = 24;
+            this.dataGridSupplier.Size = new System.Drawing.Size(615, 804);
+            this.dataGridSupplier.TabIndex = 0;
+            this.dataGridSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSupplier_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "NOMBRE";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "EMAIL";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // labelId
             // 
@@ -91,7 +133,7 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(211, 230);
+            this.txtId.Location = new System.Drawing.Point(224, 228);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(112, 30);
             this.txtId.TabIndex = 11;
@@ -128,56 +170,6 @@
             this.panelAction.Size = new System.Drawing.Size(634, 486);
             this.panelAction.TabIndex = 15;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.name,
-            this.email});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(615, 804);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "NOMBRE";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "EMAIL";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // panelHerramienta
-            // 
-            this.panelHerramienta.Controls.Add(this.btnMenu);
-            this.panelHerramienta.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelHerramienta.Location = new System.Drawing.Point(0, 0);
-            this.panelHerramienta.Name = "panelHerramienta";
-            this.panelHerramienta.Size = new System.Drawing.Size(323, 486);
-            this.panelHerramienta.TabIndex = 0;
-            // 
             // panelBotones
             // 
             this.panelBotones.Controls.Add(this.btnInsert);
@@ -188,18 +180,6 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(311, 486);
             this.panelBotones.TabIndex = 1;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.Black;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(323, 91);
-            this.btnMenu.TabIndex = 2;
-            this.btnMenu.Text = "Herramientas";
-            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // btnInsert
             // 
@@ -231,6 +211,29 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // panelHerramienta
+            // 
+            this.panelHerramienta.Controls.Add(this.btnMenu);
+            this.panelHerramienta.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelHerramienta.Location = new System.Drawing.Point(0, 0);
+            this.panelHerramienta.Name = "panelHerramienta";
+            this.panelHerramienta.Size = new System.Drawing.Size(323, 486);
+            this.panelHerramienta.TabIndex = 0;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.Black;
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(323, 91);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.Text = "Herramientas";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // FormSupplier
             // 
@@ -246,12 +249,12 @@
             this.Text = "FormSupplier";
             this.Load += new System.EventHandler(this.FormSupplier_Load);
             this.panelData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSupplier)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
             this.panelAction.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panelHerramienta.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
+            this.panelHerramienta.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,7 +266,7 @@
         private FontAwesome.Sharp.IconButton iconBuscar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridSupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
