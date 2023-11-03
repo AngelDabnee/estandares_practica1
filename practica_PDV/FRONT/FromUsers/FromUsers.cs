@@ -115,5 +115,19 @@ namespace practica_PDV.FRONT.FromUsers
             nuevo = new FromUpdateUser();
             nuevo.Show();
         }
+
+        private void iconBuscar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                dataGridUser.Rows.Clear();
+                List<object[]> datos = user.selectForName(txtBuscar.Text);
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    dataGridUser.Rows.Add(datos[i]);
+                }
+            }
+            txtBuscar.Clear();
+        }
     }
 }

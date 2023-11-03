@@ -94,6 +94,7 @@ namespace practica_PDV.FRONT.FromCustomers
                     dataGridCustomers.Rows.Add(datos[i]);
                 }
             }
+            txtBuscar.Clear();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

@@ -44,10 +44,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.panelBuscar = new System.Windows.Forms.Panel();
+            this.labelId = new System.Windows.Forms.Label();
             this.iconBuscar = new FontAwesome.Sharp.IconButton();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.labelId = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUser)).BeginInit();
@@ -222,6 +222,18 @@
             this.panelBuscar.Size = new System.Drawing.Size(1049, 426);
             this.panelBuscar.TabIndex = 3;
             // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.BackColor = System.Drawing.Color.Transparent;
+            this.labelId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.White;
+            this.labelId.Location = new System.Drawing.Point(276, 164);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(128, 24);
+            this.labelId.TabIndex = 9;
+            this.labelId.Text = "ID a Eliminar";
+            // 
             // iconBuscar
             // 
             this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
@@ -233,6 +245,7 @@
             this.iconBuscar.Size = new System.Drawing.Size(66, 53);
             this.iconBuscar.TabIndex = 8;
             this.iconBuscar.UseVisualStyleBackColor = true;
+            this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
             // 
             // txtId
             // 
@@ -249,18 +262,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(256, 30);
             this.txtBuscar.TabIndex = 6;
-            // 
-            // labelId
-            // 
-            this.labelId.AutoSize = true;
-            this.labelId.BackColor = System.Drawing.Color.Transparent;
-            this.labelId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.ForeColor = System.Drawing.Color.White;
-            this.labelId.Location = new System.Drawing.Point(276, 164);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(128, 24);
-            this.labelId.TabIndex = 9;
-            this.labelId.Text = "ID a Eliminar";
             // 
             // FromUsers
             // 

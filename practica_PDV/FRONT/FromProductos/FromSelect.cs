@@ -42,7 +42,7 @@ namespace practica_PDV.FromProductos
             {
                 dataGridProduct.Rows.Add(datos[i]);//al recorrerla, le agrego los datos que tengo en la variable en el indice [i]
             }
-
+            txtName.Clear();
         }
 
         public void cargarDatos() 

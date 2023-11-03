@@ -3,6 +3,7 @@ using practica_PDV.FRONT.FromCustomers;
 using practica_PDV.FRONT.FromCustomers.FormNewCustomers;
 using practica_PDV.FRONT.FromCustomers.FormUpdateCustomers;
 using practica_PDV.FRONT.FromInsert;
+using practica_PDV.FRONT.FromSuppliers;
 using practica_PDV.FRONT.FromUsers;
 using practica_PDV.LOGIN;
 using System;
@@ -23,7 +24,7 @@ namespace practica_PDV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormSupplier());
         }
     }
 }

@@ -156,6 +156,12 @@
     <Compile Include="FRONT\FromProductos\FormUpdateProduc.Designer.cs">
       <DependentUpon>FormUpdateProduc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRONT\FromSuppliers\FormSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromSuppliers\FormSupplier.Designer.cs">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRONT\FromUsers\FormInsertUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,7 @@
     <Compile Include="MIDDEL\Products.cs" />
     <Compile Include="MIDDEL\ProductsToSell.cs" />
     <Compile Include="MIDDEL\Sell.cs" />
+    <Compile Include="MIDDEL\Suppliers.cs" />
     <Compile Include="MIDDEL\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromProductos\FormUpdateProduc.resx">
       <DependentUpon>FormUpdateProduc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromSuppliers\FormSupplier.resx">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromUsers\FormInsertUsers.resx">
       <DependentUpon>FormInsertUsers.cs</DependentUpon>
