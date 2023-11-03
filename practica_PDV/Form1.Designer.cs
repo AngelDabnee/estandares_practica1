@@ -33,11 +33,12 @@
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.panelFormulario.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelControls.SuspendLayout();
@@ -80,14 +81,29 @@
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.btnProveedor);
             this.panelControls.Controls.Add(this.btnUsuarios);
             this.panelControls.Controls.Add(this.btnClientes);
             this.panelControls.Controls.Add(this.btnBuscar);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControls.Location = new System.Drawing.Point(0, 100);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(238, 242);
+            this.panelControls.Size = new System.Drawing.Size(238, 289);
             this.panelControls.TabIndex = 1;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.AutoSize = true;
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 136);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(238, 68);
+            this.btnUsuarios.TabIndex = 4;
+            this.btnUsuarios.TabStop = false;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnClientes
             // 
@@ -138,19 +154,19 @@
             this.pictureBoxLogo.TabStop = false;
             this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
-            // btnUsuarios
+            // btnProveedor
             // 
-            this.btnUsuarios.AutoSize = true;
-            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 136);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(238, 68);
-            this.btnUsuarios.TabIndex = 4;
-            this.btnUsuarios.TabStop = false;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnProveedor.AutoSize = true;
+            this.btnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProveedor.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.Location = new System.Drawing.Point(0, 204);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(238, 68);
+            this.btnProveedor.TabIndex = 5;
+            this.btnProveedor.TabStop = false;
+            this.btnProveedor.Text = "Proveedores";
+            this.btnProveedor.UseVisualStyleBackColor = true;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // Form1
             // 
@@ -184,6 +200,7 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnProveedor;
     }
 }
 

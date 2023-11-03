@@ -61,7 +61,7 @@ namespace practica_PDV.FRONT.FromSuppliers
 
         private void dataGridSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex == 0) 
+            if(e.RowIndex >= 0) 
             {
                 int celdas = e.RowIndex;
                 txtId.Text = dataGridSupplier.Rows[celdas].Cells[0].Value.ToString();
@@ -92,6 +92,32 @@ namespace practica_PDV.FRONT.FromSuppliers
             {
                 MessageBox.Show("ERROR" + ex.Message + bd.mesError);
             }
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            Form nuevo = new Form();
+            nuevo = new FormAddSuppiler();
+            nuevo.Show();
+        }
+
+        private void labelTitulo_Click(object sender, EventArgs e)
+        {
+            FormSupplier_Load(sender,e);
+        }
+
+        private void iconBuscar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                dataGridSupplier.Rows.Clear();
+                List<object[]> datos = supplier.selectAllSuppliers(txtBuscar.Text);
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    dataGridSupplier.Rows.Add(datos[i]);
+                }
+            }
+            txtBuscar.Clear();
         }
     }
 }
