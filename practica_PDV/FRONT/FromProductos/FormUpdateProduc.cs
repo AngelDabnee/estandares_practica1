@@ -59,29 +59,69 @@ namespace practica_PDV.FRONT.FromProductos.FromUpdate
         {
             try
             {
-                DialogResult dialog = MessageBox.Show($"MODIFICARÁS A '{this.nombre}', ¿DESEAS CONTINUAR?", "MODIFICAR", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show($"MODIFICARÁS A '{this.nombre}', ¿DESEAS CONTINUAR?", "MODIFICAR", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
-                    bool result = products.update(txtName.Text, txtDescription.Text, double.Parse(txtPrice.Text), int.Parse(txtquantityInStock.Value.ToString()), identifi);
-                    if (result == true)
+                    if (camposCompletos() == true) 
                     {
-                        MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
+                        bool result = products.update(txtName.Text, txtDescription.Text, double.Parse(txtPrice.Text), int.Parse(txtquantityInStock.Value.ToString()), identifi);
+                        if (result == true)
+                        {
+                            MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
+                            this.FormUpdateProduc_Load(sender,e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERROR AL MODIFICAR EL PRODICTO " + bd.mesError);
+                        }
                     }
+                }
                     else
                     {
-                        MessageBox.Show("ERROR AL MODIFICAR EL PRODICTO " + bd.mesError);
+                        MessageBox.Show("ERROR GENERAL DE WINDOWS");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("ERROR GENERAL DE WINDOWS");
-                }
                 this.cargarDatos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR GENERAL" + ex.Message);
             }
+        }
+        public void limpiarForm(bool habilita)
+        {
+            if (habilita)
+            {
+                txtName.Enabled = true;
+                txtName.Clear();
+                txtPrice.Enabled = true;
+                txtPrice.Clear();
+                txtDescription.Enabled = true;
+                txtDescription.Clear();
+                txtquantityInStock.Enabled = true;
+                txtquantityInStock.Value = 0;
+                btnConfirmar.Enabled = true;
+            }
+            else
+            {
+                txtName.Enabled = false;
+                txtName.Clear();
+                txtPrice.Enabled = false;
+                txtPrice.Clear();
+                txtDescription.Enabled = false;
+                txtDescription.Clear();
+                txtquantityInStock.Enabled = false;
+                txtquantityInStock.Value = 0;
+                btnConfirmar.Enabled = false;
+            }
+        }
+        private bool camposCompletos()
+        {
+            if (string.IsNullOrEmpty(txtName.Text) && !decimal.TryParse(txtPrice.Text, out decimal price) && string.IsNullOrEmpty(txtDescription.Text) && txtquantityInStock.Value <= 0)
+            {
+                MessageBox.Show("TODOS LOS CAMPOS SON OBLIGATORIOS");
+                return false;
+            }
+            return true;
         }
     }
 }

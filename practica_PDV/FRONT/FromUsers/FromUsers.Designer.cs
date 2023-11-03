@@ -1,6 +1,6 @@
-﻿namespace practica_PDV.FRONT.FromCustomers
+﻿namespace practica_PDV.FRONT.FromUsers
 {
-    partial class FormCustomers
+    partial class FromUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCustomers));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FromUsers));
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panelDataGrid = new System.Windows.Forms.Panel();
-            this.dataGridCustomers = new System.Windows.Forms.DataGridView();
+            this.dataGridUser = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addresss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.iconBuscar = new FontAwesome.Sharp.IconButton();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelAction = new System.Windows.Forms.Panel();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.panelBuscar = new System.Windows.Forms.Panel();
+            this.iconBuscar = new FontAwesome.Sharp.IconButton();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUser)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelAction.SuspendLayout();
+            this.panelBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -69,81 +70,107 @@
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(365, 37);
+            this.labelTitulo.ForeColor = System.Drawing.Color.Black;
+            this.labelTitulo.Location = new System.Drawing.Point(490, 33);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(86, 24);
-            this.labelTitulo.TabIndex = 0;
-            this.labelTitulo.Text = "Clientes";
+            this.labelTitulo.Size = new System.Drawing.Size(94, 24);
+            this.labelTitulo.TabIndex = 1;
+            this.labelTitulo.Text = "Usuarios";
             this.labelTitulo.Click += new System.EventHandler(this.labelTitulo_Click);
             // 
             // panelDataGrid
             // 
-            this.panelDataGrid.Controls.Add(this.dataGridCustomers);
+            this.panelDataGrid.BackColor = System.Drawing.Color.Transparent;
+            this.panelDataGrid.Controls.Add(this.dataGridUser);
             this.panelDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelDataGrid.Location = new System.Drawing.Point(0, 583);
+            this.panelDataGrid.Location = new System.Drawing.Point(0, 526);
             this.panelDataGrid.Name = "panelDataGrid";
-            this.panelDataGrid.Size = new System.Drawing.Size(1249, 221);
+            this.panelDataGrid.Size = new System.Drawing.Size(1249, 278);
             this.panelDataGrid.TabIndex = 1;
             // 
-            // dataGridCustomers
+            // dataGridUser
             // 
-            this.dataGridCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridCustomers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridUser.AllowUserToDeleteRows = false;
+            this.dataGridUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.name,
             this.email,
-            this.phone,
-            this.addresss});
-            this.dataGridCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridCustomers.Location = new System.Drawing.Point(0, 0);
-            this.dataGridCustomers.Name = "dataGridCustomers";
-            this.dataGridCustomers.ReadOnly = true;
-            this.dataGridCustomers.RowHeadersVisible = false;
-            this.dataGridCustomers.RowHeadersWidth = 51;
-            this.dataGridCustomers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridCustomers.RowTemplate.Height = 24;
-            this.dataGridCustomers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridCustomers.Size = new System.Drawing.Size(1249, 221);
-            this.dataGridCustomers.TabIndex = 0;
-            this.dataGridCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomers_CellContentClick);
+            this.password});
+            this.dataGridUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridUser.Location = new System.Drawing.Point(0, 0);
+            this.dataGridUser.Name = "dataGridUser";
+            this.dataGridUser.ReadOnly = true;
+            this.dataGridUser.RowHeadersWidth = 51;
+            this.dataGridUser.RowTemplate.Height = 24;
+            this.dataGridUser.Size = new System.Drawing.Size(1249, 278);
+            this.dataGridUser.TabIndex = 0;
+            this.dataGridUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUser_CellContentClick);
             // 
             // id
             // 
-            this.id.HeaderText = "id";
+            this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // name
             // 
-            this.name.HeaderText = "nombre";
+            this.name.HeaderText = "NAME";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // email
             // 
-            this.email.HeaderText = "email";
+            this.email.HeaderText = "EMAIL";
             this.email.MinimumWidth = 6;
             this.email.Name = "email";
             this.email.ReadOnly = true;
             // 
-            // phone
+            // password
             // 
-            this.phone.HeaderText = "telefono";
-            this.phone.MinimumWidth = 6;
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
+            this.password.HeaderText = "PASSWORD";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
             // 
-            // addresss
+            // panelMenu
             // 
-            this.addresss.HeaderText = "direccion";
-            this.addresss.MinimumWidth = 6;
-            this.addresss.Name = "addresss";
-            this.addresss.ReadOnly = true;
+            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMenu.Controls.Add(this.panelAction);
+            this.panelMenu.Controls.Add(this.btnMenu);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMenu.Location = new System.Drawing.Point(1049, 100);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(200, 426);
+            this.panelMenu.TabIndex = 2;
+            // 
+            // panelAction
+            // 
+            this.panelAction.Controls.Add(this.btnInsert);
+            this.panelAction.Controls.Add(this.btnEditar);
+            this.panelAction.Controls.Add(this.btnDelete);
+            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAction.Location = new System.Drawing.Point(0, 64);
+            this.panelAction.Name = "panelAction";
+            this.panelAction.Size = new System.Drawing.Size(200, 362);
+            this.panelAction.TabIndex = 2;
+            this.panelAction.Visible = false;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInsert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(0, 128);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(200, 64);
+            this.btnInsert.TabIndex = 4;
+            this.btnInsert.Text = "Nuevo";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnEditar
             // 
@@ -152,7 +179,7 @@
             this.btnEditar.Location = new System.Drawing.Point(0, 64);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(200, 64);
-            this.btnEditar.TabIndex = 3;
+            this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -164,50 +191,36 @@
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(200, 64);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInsert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(0, 128);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(200, 64);
-            this.btnInsert.TabIndex = 1;
-            this.btnInsert.Text = "Nuevo";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnMenu
             // 
             this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.Black;
             this.btnMenu.Location = new System.Drawing.Point(0, 0);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(200, 64);
-            this.btnMenu.TabIndex = 0;
+            this.btnMenu.TabIndex = 1;
             this.btnMenu.Text = "Herramientas";
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // txtBuscar
+            // panelBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(337, 147);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(256, 30);
-            this.txtBuscar.TabIndex = 3;
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(420, 202);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(112, 30);
-            this.txtId.TabIndex = 4;
+            this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscar.Controls.Add(this.labelId);
+            this.panelBuscar.Controls.Add(this.iconBuscar);
+            this.panelBuscar.Controls.Add(this.txtId);
+            this.panelBuscar.Controls.Add(this.txtBuscar);
+            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBuscar.Location = new System.Drawing.Point(0, 100);
+            this.panelBuscar.Name = "panelBuscar";
+            this.panelBuscar.Size = new System.Drawing.Size(1049, 426);
+            this.panelBuscar.TabIndex = 3;
             // 
             // iconBuscar
             // 
@@ -215,36 +228,27 @@
             this.iconBuscar.IconColor = System.Drawing.Color.Black;
             this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconBuscar.IconSize = 40;
-            this.iconBuscar.Location = new System.Drawing.Point(624, 138);
+            this.iconBuscar.Location = new System.Drawing.Point(646, 100);
             this.iconBuscar.Name = "iconBuscar";
             this.iconBuscar.Size = new System.Drawing.Size(66, 53);
-            this.iconBuscar.TabIndex = 5;
+            this.iconBuscar.TabIndex = 8;
             this.iconBuscar.UseVisualStyleBackColor = true;
-            this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
             // 
-            // panelMenu
+            // txtId
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
-            this.panelMenu.Controls.Add(this.panelAction);
-            this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMenu.Location = new System.Drawing.Point(1049, 100);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 483);
-            this.panelMenu.TabIndex = 6;
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(442, 164);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(112, 30);
+            this.txtId.TabIndex = 7;
             // 
-            // panelAction
+            // txtBuscar
             // 
-            this.panelAction.BackColor = System.Drawing.Color.Transparent;
-            this.panelAction.Controls.Add(this.btnInsert);
-            this.panelAction.Controls.Add(this.btnEditar);
-            this.panelAction.Controls.Add(this.btnDelete);
-            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAction.Location = new System.Drawing.Point(0, 64);
-            this.panelAction.Name = "panelAction";
-            this.panelAction.Size = new System.Drawing.Size(200, 419);
-            this.panelAction.TabIndex = 1;
-            this.panelAction.Visible = false;
+            this.txtBuscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(359, 109);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(256, 30);
+            this.txtBuscar.TabIndex = 6;
             // 
             // labelId
             // 
@@ -252,38 +256,36 @@
             this.labelId.BackColor = System.Drawing.Color.Transparent;
             this.labelId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelId.ForeColor = System.Drawing.Color.White;
-            this.labelId.Location = new System.Drawing.Point(237, 206);
+            this.labelId.Location = new System.Drawing.Point(276, 164);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(128, 24);
-            this.labelId.TabIndex = 7;
+            this.labelId.TabIndex = 9;
             this.labelId.Text = "ID a Eliminar";
             // 
-            // FormCustomers
+            // FromUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 804);
-            this.Controls.Add(this.labelId);
+            this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.iconBuscar);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.panelDataGrid);
             this.Controls.Add(this.panelTitulo);
-            this.Name = "FormCustomers";
-            this.Text = "FormCustomers";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormCustomers_Load);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.Name = "FromUsers";
+            this.Text = "FormUsers";
+            this.Load += new System.EventHandler(this.FromUsers_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             this.panelDataGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUser)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelAction.ResumeLayout(false);
+            this.panelBuscar.ResumeLayout(false);
+            this.panelBuscar.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -291,22 +293,22 @@
 
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Panel panelDataGrid;
-        private System.Windows.Forms.DataGridView dataGridCustomers;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Label labelTitulo;
+        private System.Windows.Forms.Panel panelAction;
+        private System.Windows.Forms.DataGridView dataGridUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addresss;
-        private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Panel panelBuscar;
         private FontAwesome.Sharp.IconButton iconBuscar;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelAction;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label labelId;
     }
 }

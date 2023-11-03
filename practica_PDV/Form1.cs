@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using practica_PDV.FromProductos;
 using practica_PDV.FRONT.FromCustomers;
+using practica_PDV.FRONT.FromUsers;
 
 namespace practica_PDV
 {
@@ -55,6 +56,12 @@ namespace practica_PDV
         private void panelForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            openHijoFrom(new FromUsers());
+            panelControls.Hide();
         }
     }
 }

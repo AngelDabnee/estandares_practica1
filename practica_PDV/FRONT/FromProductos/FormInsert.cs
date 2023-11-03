@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace practica_PDV.FRONT.FromInsert
 {
@@ -47,16 +48,19 @@ namespace practica_PDV.FRONT.FromInsert
             DialogResult dialogResult = MessageBox.Show("¿Deseas Continuar?","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                bool result = produc.insert(textName.Text, textDescription.Text, double.Parse(textPrice.Text), int.Parse(textquantityInStock.Value.ToString()));
-                if (result == false)
+                if (camposCompletos() == true) 
                 {
-                    MessageBox.Show($"ERROR AL CARGAR PRODUCTO{Products.msgError}");
-                }
-                else
-                {
-                    MessageBox.Show("PRODUCTO CARGADO CON ÉXITO");
-                    this.limpiarForm(false);
-                    this.FormInsert_Load(sender, e);
+                    bool result = produc.insert(textName.Text, textDescription.Text, double.Parse(textPrice.Text), int.Parse(textquantityInStock.Value.ToString()));
+                    if (result == false)
+                    {
+                        MessageBox.Show($"ERROR AL CARGAR PRODUCTO{Products.msgError}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("PRODUCTO CARGADO CON ÉXITO");
+                        this.limpiarForm(false);
+                        this.FormInsert_Load(sender, e);
+                    }
                 }
             }
             else 
@@ -76,6 +80,7 @@ namespace practica_PDV.FRONT.FromInsert
                 textDescription.Enabled = true;
                 textDescription.Clear();
                 textquantityInStock.Enabled = true;
+                textquantityInStock.Value = 0;
                 btnInsert.Enabled = true; 
             }
             else 
@@ -87,8 +92,18 @@ namespace practica_PDV.FRONT.FromInsert
                 textDescription.Enabled = false;
                 textDescription.Clear();
                 textquantityInStock.Enabled = false;
+                textquantityInStock.Value = 0;
                 btnInsert.Enabled= false;
             }
+        }
+        private bool camposCompletos()
+        {
+            if (string.IsNullOrEmpty(textName.Text) && !decimal.TryParse(textPrice.Text,out decimal price) && string.IsNullOrEmpty(textDescription.Text) && textquantityInStock.Value <=0 )
+            {
+                MessageBox.Show("TODOS LOS CAMPOS SON OBLIGATORIOS");
+                return false;
+            }
+            return true;
         }
 
         private void btnNew_Click(object sender, EventArgs e)

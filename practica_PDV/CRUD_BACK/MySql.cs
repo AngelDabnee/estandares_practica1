@@ -88,7 +88,7 @@ namespace practica_PDV.CRUD_BACK
                 if (con.State == System.Data.ConnectionState.Closed)
                 {
                     con.Open();
-                    command = new MySqlCommand($"DELETE FROM {tabla} WHERE product_id = {id}");
+                    command = new MySqlCommand($"DELETE FROM {tabla} WHERE id = {id}");
                     command.Connection = con;
                     int res = command.ExecuteNonQuery();
                     if (res == 1)

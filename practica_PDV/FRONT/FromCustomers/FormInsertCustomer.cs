@@ -43,22 +43,51 @@ namespace practica_PDV.FRONT.FromCustomers.FormNewCustomers
             DialogResult dialog = MessageBox.Show("¿Deseas Continuar","Añadir",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
-                bool results = customers.insertCustomers(txtName.Text, txtemail.Text, txtphone.Text, txtaddress.Text);
-                if (results == true)
+                if (camposCompletos() == true)
                 {
-                    MessageBox.Show("CLIENTE REGISTRADO EXITOSAMENTE");
+                    bool results = customers.insertCustomers(txtName.Text, txtemail.Text, txtphone.Text, txtaddress.Text);
+                    if (results == true)
+                    {
+                        MessageBox.Show("CLIENTE REGISTRADO EXITOSAMENTE");
+                        this.limpiarForm(true);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"ERROR AL REGISRAR {bd.mesError}");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show($"ERROR AL REGISRAR {bd.mesError}");
-                }
-
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void limpiarForm(bool habilita)
+        {
+            if (habilita)
+            {
+                txtName.Clear();
+                txtaddress.Clear();
+                txtemail.Clear();
+                txtphone.Clear();
+            }
+            else
+            {
+                txtName.Clear();
+                txtaddress.Clear();
+                txtemail.Clear();
+                txtphone.Clear();
+            }
+        }
+        private bool camposCompletos()
+        {
+            if (string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtemail.Text) && string.IsNullOrEmpty(txtphone.Text) && string.IsNullOrEmpty(txtaddress.Text))
+            {
+                MessageBox.Show("TODOS LOS CAMPOS SON OBLIGATORIOS");
+                return false;
+            }
+            return true;
         }
     }
 }

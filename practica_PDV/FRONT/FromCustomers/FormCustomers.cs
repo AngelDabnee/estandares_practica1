@@ -55,22 +55,20 @@ namespace practica_PDV.FRONT.FromCustomers
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult delete = MessageBox.Show($"¿DESEA ELIMINAR AL {this.nombre}", "ELIMINAR", MessageBoxButtons.YesNo);
+            DialogResult delete = MessageBox.Show($"¿DESEA ELIMINAR AL {this.nombre}", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (delete == DialogResult.Yes)
             {
                 bool res = customers.deleteCustomers(this.identi);
                 if (res == false)
                 {
                     MessageBox.Show("CLIENTE ELIMINADO CON ÉXITO");
-                    this.cargarDatos();
+                    this.FormCustomers_Load(sender,e);
                 }
                 else
                 {
                     MessageBox.Show("ERROR AL ELIMINAR CLIENTE" + Customers.mesError);
                 }
             }
-            this.cargarDatos();
-
         }
 
         private void dataGridCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -115,6 +113,11 @@ namespace practica_PDV.FRONT.FromCustomers
             {
                 panelAction.Hide();
             }
+        }
+
+        private void labelTitulo_Click(object sender, EventArgs e)
+        {
+            this.FormCustomers_Load(sender,e);
         }
     }
 }

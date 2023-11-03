@@ -126,22 +126,22 @@
     <Compile Include="FRONT\FromCustomers\FormCustomers.Designer.cs">
       <DependentUpon>FormCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRONT\FromCustomers\FormNewCustomers\FormInsertCustomer.cs">
+    <Compile Include="FRONT\FromCustomers\FormInsertCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRONT\FromCustomers\FormNewCustomers\FormInsertCustomer.Designer.cs">
+    <Compile Include="FRONT\FromCustomers\FormInsertCustomer.Designer.cs">
       <DependentUpon>FormInsertCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRONT\FromCustomers\FormUpdateCustomers\FromUpdateC.cs">
+    <Compile Include="FRONT\FromCustomers\FromUpdateC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRONT\FromCustomers\FormUpdateCustomers\FromUpdateC.Designer.cs">
+    <Compile Include="FRONT\FromCustomers\FromUpdateC.Designer.cs">
       <DependentUpon>FromUpdateC.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRONT\FromProductos\FromInsert\FormInsert.cs">
+    <Compile Include="FRONT\FromProductos\FormInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRONT\FromProductos\FromInsert\FormInsert.Designer.cs">
+    <Compile Include="FRONT\FromProductos\FormInsert.Designer.cs">
       <DependentUpon>FormInsert.cs</DependentUpon>
     </Compile>
     <Compile Include="FRONT\FromProductos\FromSelect.cs">
@@ -150,11 +150,29 @@
     <Compile Include="FRONT\FromProductos\FromSelect.Designer.cs">
       <DependentUpon>FromSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRONT\FromProductos\FromUpdate\FormUpdateProduc.cs">
+    <Compile Include="FRONT\FromProductos\FormUpdateProduc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRONT\FromProductos\FromUpdate\FormUpdateProduc.Designer.cs">
+    <Compile Include="FRONT\FromProductos\FormUpdateProduc.Designer.cs">
       <DependentUpon>FormUpdateProduc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRONT\FromUsers\FormInsertUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromUsers\FormInsertUsers.Designer.cs">
+      <DependentUpon>FormInsertUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRONT\FromUsers\FromUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromUsers\FromUpdateUser.Designer.cs">
+      <DependentUpon>FromUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRONT\FromUsers\FromUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromUsers\FromUsers.Designer.cs">
+      <DependentUpon>FromUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="MIDDEL\Customers.cs" />
     <Compile Include="MIDDEL\Products.cs" />
@@ -172,20 +190,29 @@
     <EmbeddedResource Include="FRONT\FromCustomers\FormCustomers.resx">
       <DependentUpon>FormCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRONT\FromCustomers\FormNewCustomers\FormInsertCustomer.resx">
+    <EmbeddedResource Include="FRONT\FromCustomers\FormInsertCustomer.resx">
       <DependentUpon>FormInsertCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRONT\FromCustomers\FormUpdateCustomers\FromUpdateC.resx">
+    <EmbeddedResource Include="FRONT\FromCustomers\FromUpdateC.resx">
       <DependentUpon>FromUpdateC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRONT\FromProductos\FromInsert\FormInsert.resx">
+    <EmbeddedResource Include="FRONT\FromProductos\FormInsert.resx">
       <DependentUpon>FormInsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromProductos\FromSelect.resx">
       <DependentUpon>FromSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRONT\FromProductos\FromUpdate\FormUpdateProduc.resx">
+    <EmbeddedResource Include="FRONT\FromProductos\FormUpdateProduc.resx">
       <DependentUpon>FormUpdateProduc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromUsers\FormInsertUsers.resx">
+      <DependentUpon>FormInsertUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromUsers\FromUpdateUser.resx">
+      <DependentUpon>FromUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromUsers\FromUsers.resx">
+      <DependentUpon>FromUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -55,21 +55,55 @@ namespace practica_PDV.FRONT.FromCustomers.FormUpdateCustomers
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show($"MODIFICARÁS A '{this.nombre}', ¿DESEAS CONTINUAR?","MODIFICAR",MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show($"MODIFICARÁS A '{this.nombre}', ¿DESEAS CONTINUAR?","MODIFICAR",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if(dialog == DialogResult.Yes) 
             {
-                bool res = customers.updateCustomers(txtName.Text,txtEmail.Text,txtPhone.Text,txtAddress.Text, identi);
-                if (res == false)
+                if (camposCompletos() == true)
                 {
-                    MessageBox.Show("CLIENTE MODIFICADO CON ÉXITO");
-                    this.cargarDatos();
-                }
-                else
-                {
-                    MessageBox.Show("ERROR AL MODIFICAR CLIENTE" + Customers.mesError);
+                    bool res = customers.updateCustomers(txtName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, this.identi);
+                    if (res == true)
+                    {
+                        MessageBox.Show("CLIENTE MODIFICADO CON ÉXITO");
+                        this.cargarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR AL MODIFICAR CLIENTE" + Customers.mesError);
+                    }
                 }
             }
             this.cargarDatos();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        public void limpiarForm(bool habilita)
+        {
+            if (habilita)
+            {
+                txtName.Clear();
+                txtAddress.Clear();
+                txtEmail.Clear();
+                txtPhone.Clear();
+            }
+            else
+            {
+                txtName.Clear();
+                txtAddress.Clear();
+                txtEmail.Clear();
+                txtPhone.Clear();
+            }
+        }
+        private bool camposCompletos()
+        {
+            if (string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtEmail.Text) && string.IsNullOrEmpty(txtPhone.Text) && string.IsNullOrEmpty(txtAddress.Text))
+            {
+                MessageBox.Show("TODOS LOS CAMPOS SON OBLIGATORIOS");
+                return false;
+            }
+            return true;
         }
     }
 }

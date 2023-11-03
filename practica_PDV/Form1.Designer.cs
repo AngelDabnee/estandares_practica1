@@ -37,6 +37,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panelFormulario.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelControls.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.btnUsuarios);
             this.panelControls.Controls.Add(this.btnClientes);
             this.panelControls.Controls.Add(this.btnBuscar);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Top;
@@ -136,6 +138,20 @@
             this.pictureBoxLogo.TabStop = false;
             this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.AutoSize = true;
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 136);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(238, 68);
+            this.btnUsuarios.TabIndex = 4;
+            this.btnUsuarios.TabStop = false;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -167,6 +183,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.Button btnUsuarios;
     }
 }
 

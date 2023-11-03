@@ -76,14 +76,14 @@ namespace practica_PDV.FromProductos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult delete = MessageBox.Show("¿DESEAS CONTINUAR","ELIMINAR",MessageBoxButtons.YesNo);
+            DialogResult delete = MessageBox.Show("¿DESEAS CONTINUAR","ELIMINAR",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(delete == DialogResult.Yes) 
             {
                 bool res = products.delete(this.identi);
                 if (res == false)
                 {
                     MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
-                    this.cargarDatos();
+                    this.FromSelect_Load(sender, e);
                 }
                 else
                 {
@@ -122,6 +122,11 @@ namespace practica_PDV.FromProductos
             Form nuevo = new Form();
             nuevo = new FormUpdateProduc();
             nuevo.Show();
+        }
+
+        private void labelTitulo_Click(object sender, EventArgs e)
+        {
+            this.FromSelect_Load(sender, e);
         }
     }
 }

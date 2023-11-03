@@ -48,6 +48,7 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_in_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelId = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             this.panelBusqueda.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -75,6 +76,7 @@
             this.labelTitulo.Size = new System.Drawing.Size(121, 28);
             this.labelTitulo.TabIndex = 0;
             this.labelTitulo.Text = "Productos";
+            this.labelTitulo.Click += new System.EventHandler(this.labelTitulo_Click);
             // 
             // txtName
             // 
@@ -88,6 +90,7 @@
             // 
             this.panelBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.panelBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelBusqueda.Controls.Add(this.labelId);
             this.panelBusqueda.Controls.Add(this.txtId);
             this.panelBusqueda.Controls.Add(this.panelMenu);
             this.panelBusqueda.Controls.Add(this.iconBuscar);
@@ -100,11 +103,11 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(401, 216);
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(483, 192);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.Size = new System.Drawing.Size(100, 30);
             this.txtId.TabIndex = 7;
-            this.txtId.Visible = false;
             // 
             // panelMenu
             // 
@@ -264,6 +267,18 @@
             this.quantity_in_stock.Name = "quantity_in_stock";
             this.quantity_in_stock.ReadOnly = true;
             // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.BackColor = System.Drawing.Color.Transparent;
+            this.labelId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.White;
+            this.labelId.Location = new System.Drawing.Point(263, 192);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(128, 24);
+            this.labelId.TabIndex = 8;
+            this.labelId.Text = "ID a Eliminar";
+            // 
             // FromSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,5 +331,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity_in_stock;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label labelId;
     }
 }
