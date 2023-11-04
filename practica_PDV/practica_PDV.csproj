@@ -114,6 +114,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRONT\FromCaja\FormCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromCaja\FormCaja.Designer.cs">
+      <DependentUpon>FormCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRONT\FromLogin\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromCaja\FormCaja.resx">
+      <DependentUpon>FormCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromLogin\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

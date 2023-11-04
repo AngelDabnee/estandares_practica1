@@ -1,4 +1,5 @@
 ﻿using practica_PDV.FromProductos;
+using practica_PDV.FRONT.FromCaja;
 using practica_PDV.FRONT.FromCustomers;
 using practica_PDV.FRONT.FromCustomers.FormNewCustomers;
 using practica_PDV.FRONT.FromCustomers.FormUpdateCustomers;
@@ -24,7 +25,7 @@ namespace practica_PDV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormCaja());
         }
     }
 }

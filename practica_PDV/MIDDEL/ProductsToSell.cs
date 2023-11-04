@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace practica_PDV.MIDDEL
 {
-    internal class ProductsToSell
+    public class ProductsToSell
     {
         public int productoId;
         public int cantidad;
