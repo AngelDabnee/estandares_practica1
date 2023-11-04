@@ -33,6 +33,11 @@
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panelProductos = new System.Windows.Forms.Panel();
             this.dataGridProduct = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descProduc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panelBtn = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -59,11 +64,6 @@
             this.labelSubtotal = new System.Windows.Forms.Label();
             this.panelDataGridDetalle = new System.Windows.Forms.Panel();
             this.dataGridDesc = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descProduc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +137,41 @@
             this.dataGridProduct.Visible = false;
             this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "NOMBRE";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // descProduc
+            // 
+            this.descProduc.HeaderText = "DESCRIPCION";
+            this.descProduc.MinimumWidth = 6;
+            this.descProduc.Name = "descProduc";
+            this.descProduc.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "PRECIO";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "STOCK";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
             // panelTitulo
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.Transparent;
@@ -169,6 +204,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(185, 30);
             this.txtBuscar.TabIndex = 8;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // labelBuscar
             // 
@@ -223,6 +259,7 @@
             this.lblProduc.Size = new System.Drawing.Size(227, 24);
             this.lblProduc.TabIndex = 2;
             this.lblProduc.Text = "Selecciona el Producto";
+            this.lblProduc.Click += new System.EventHandler(this.lblProduc_Click);
             // 
             // panelbtnAcciones
             // 
@@ -432,41 +469,6 @@
             this.dataGridDesc.RowTemplate.Height = 24;
             this.dataGridDesc.Size = new System.Drawing.Size(614, 259);
             this.dataGridDesc.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "NOMBRE";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // descProduc
-            // 
-            this.descProduc.HeaderText = "DESCRIPCION";
-            this.descProduc.MinimumWidth = 6;
-            this.descProduc.Name = "descProduc";
-            this.descProduc.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "PRECIO";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "STOCK";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
             // 
             // cantidad_detalle
             // 
