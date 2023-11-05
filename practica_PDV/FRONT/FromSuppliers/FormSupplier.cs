@@ -119,5 +119,11 @@ namespace practica_PDV.FRONT.FromSuppliers
             }
             txtBuscar.Clear();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Form nuevo = new FormUpdateSupplier();
+            nuevo.Show();
+        }
     }
 }

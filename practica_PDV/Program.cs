@@ -25,7 +25,7 @@ namespace practica_PDV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCaja());
+            Application.Run(new Login());
         }
     }
 }

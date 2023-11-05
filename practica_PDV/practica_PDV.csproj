@@ -180,6 +180,12 @@
     <Compile Include="FRONT\FromSuppliers\FormSupplier.Designer.cs">
       <DependentUpon>FormSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRONT\FromSuppliers\FormUpdateSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONT\FromSuppliers\FormUpdateSupplier.Designer.cs">
+      <DependentUpon>FormUpdateSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRONT\FromUsers\FormInsertUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromSuppliers\FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONT\FromSuppliers\FormUpdateSupplier.resx">
+      <DependentUpon>FormUpdateSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRONT\FromUsers\FormInsertUsers.resx">
       <DependentUpon>FormInsertUsers.cs</DependentUpon>

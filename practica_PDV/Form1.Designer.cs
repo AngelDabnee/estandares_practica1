@@ -32,13 +32,14 @@
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnCaja = new System.Windows.Forms.Button();
             this.panelControls = new System.Windows.Forms.Panel();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btnProveedor = new System.Windows.Forms.Button();
             this.panelFormulario.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelControls.SuspendLayout();
@@ -55,7 +56,7 @@
             this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormulario.Location = new System.Drawing.Point(0, 0);
             this.panelFormulario.Name = "panelFormulario";
-            this.panelFormulario.Size = new System.Drawing.Size(1249, 804);
+            this.panelFormulario.Size = new System.Drawing.Size(1249, 903);
             this.panelFormulario.TabIndex = 2;
             // 
             // panelForm
@@ -64,7 +65,7 @@
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(238, 0);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(1011, 804);
+            this.panelForm.Size = new System.Drawing.Size(1011, 903);
             this.panelForm.TabIndex = 1;
             this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
@@ -76,11 +77,26 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(238, 804);
+            this.panelLogo.Size = new System.Drawing.Size(238, 903);
             this.panelLogo.TabIndex = 0;
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.AutoSize = true;
+            this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCaja.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.Location = new System.Drawing.Point(0, 272);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(238, 68);
+            this.btnCaja.TabIndex = 6;
+            this.btnCaja.TabStop = false;
+            this.btnCaja.Text = "CAJA";
+            this.btnCaja.UseVisualStyleBackColor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.btnCaja);
             this.panelControls.Controls.Add(this.btnProveedor);
             this.panelControls.Controls.Add(this.btnUsuarios);
             this.panelControls.Controls.Add(this.btnClientes);
@@ -88,8 +104,22 @@
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControls.Location = new System.Drawing.Point(0, 100);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(238, 289);
+            this.panelControls.Size = new System.Drawing.Size(238, 416);
             this.panelControls.TabIndex = 1;
+            // 
+            // btnProveedor
+            // 
+            this.btnProveedor.AutoSize = true;
+            this.btnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProveedor.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.Location = new System.Drawing.Point(0, 204);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(238, 68);
+            this.btnProveedor.TabIndex = 5;
+            this.btnProveedor.TabStop = false;
+            this.btnProveedor.Text = "Proveedores";
+            this.btnProveedor.UseVisualStyleBackColor = true;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // btnUsuarios
             // 
@@ -154,31 +184,18 @@
             this.pictureBoxLogo.TabStop = false;
             this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
-            // btnProveedor
-            // 
-            this.btnProveedor.AutoSize = true;
-            this.btnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProveedor.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedor.Location = new System.Drawing.Point(0, 204);
-            this.btnProveedor.Name = "btnProveedor";
-            this.btnProveedor.Size = new System.Drawing.Size(238, 68);
-            this.btnProveedor.TabIndex = 5;
-            this.btnProveedor.TabStop = false;
-            this.btnProveedor.Text = "Proveedores";
-            this.btnProveedor.UseVisualStyleBackColor = true;
-            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1249, 804);
+            this.ClientSize = new System.Drawing.Size(1249, 903);
             this.Controls.Add(this.panelFormulario);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelFormulario.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelControls.ResumeLayout(false);
@@ -201,6 +218,7 @@
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.Button btnCaja;
     }
 }
 

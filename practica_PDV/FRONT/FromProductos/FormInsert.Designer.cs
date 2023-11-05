@@ -105,9 +105,9 @@
             // 
             this.btnNew.AutoSize = true;
             this.btnNew.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(183, 295);
+            this.btnNew.Location = new System.Drawing.Point(161, 295);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(120, 41);
+            this.btnNew.Size = new System.Drawing.Size(142, 71);
             this.btnNew.TabIndex = 10;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -117,9 +117,9 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(588, 295);
+            this.btnCancel.Location = new System.Drawing.Point(573, 295);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 41);
+            this.btnCancel.Size = new System.Drawing.Size(135, 71);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -129,9 +129,9 @@
             // 
             this.btnInsert.AutoSize = true;
             this.btnInsert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(384, 295);
+            this.btnInsert.Location = new System.Drawing.Point(372, 295);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(120, 41);
+            this.btnInsert.Size = new System.Drawing.Size(132, 71);
             this.btnInsert.TabIndex = 8;
             this.btnInsert.Text = "Confirmar";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.Stock.AutoSize = true;
             this.Stock.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stock.ForeColor = System.Drawing.SystemColors.Window;
-            this.Stock.Location = new System.Drawing.Point(472, 210);
+            this.Stock.Location = new System.Drawing.Point(430, 210);
             this.Stock.Name = "Stock";
             this.Stock.Size = new System.Drawing.Size(74, 28);
             this.Stock.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrice.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelPrice.Location = new System.Drawing.Point(149, 213);
+            this.labelPrice.Location = new System.Drawing.Point(85, 216);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(81, 28);
             this.labelPrice.TabIndex = 6;
@@ -164,7 +164,7 @@
             this.labelDescription.AutoSize = true;
             this.labelDescription.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescription.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelDescription.Location = new System.Drawing.Point(409, 126);
+            this.labelDescription.Location = new System.Drawing.Point(367, 126);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(141, 28);
             this.labelDescription.TabIndex = 5;
@@ -175,7 +175,7 @@
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelName.Location = new System.Drawing.Point(135, 126);
+            this.labelName.Location = new System.Drawing.Point(71, 129);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(97, 28);
             this.labelName.TabIndex = 4;

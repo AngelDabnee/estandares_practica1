@@ -13,6 +13,7 @@ using practica_PDV.FromProductos;
 using practica_PDV.FRONT.FromCustomers;
 using practica_PDV.FRONT.FromSuppliers;
 using practica_PDV.FRONT.FromUsers;
+using practica_PDV.FRONT.FromCaja;
 
 namespace practica_PDV
 {
@@ -69,6 +70,17 @@ namespace practica_PDV
         {
             openHijoFrom(new FormSupplier());
             panelControls.Hide();
+        }
+
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            openHijoFrom(new FormCaja());
+            panelControls.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

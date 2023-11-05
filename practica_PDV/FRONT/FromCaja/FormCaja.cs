@@ -9,6 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using practica_PDV.FRONT;
+using practica_PDV.FRONT.FromCustomers.FormNewCustomers;
+using FontAwesome.Sharp;
+using MySql.Data.MySqlClient;
 
 namespace practica_PDV.FRONT.FromCaja
 {
@@ -17,24 +21,31 @@ namespace practica_PDV.FRONT.FromCaja
         CRUDs_BD bd;
         Products products; 
         Customers customers;
-        Sels venta;
+        Sell sell;
         double cantidad;
         string nombre;
         double total;
         double subtotal;
         List<int> idProductos;
         List<int> cantidadProductos;
+        int identifi;
+        private List<int> cantidadProductosComprados;
 
-
+        //como no salió hicimos algo cochi 
+        MySqlConnection con = new MySqlConnection("server=localhost;database=practica_pdv;uid=root;pwd=;");
+        MySqlCommand comando;
+        MySqlDataReader leer;
+        String comandoSelect = "";
 
         public FormCaja()
         {
             InitializeComponent();
             products = new Products();
-            venta = new Sels();
+            sell = new Sell();
             idProductos = new List<int>();
-            cantidadProductos = new List<int>();    
-            bd = new CRUD_BACK.MySql();
+            cantidadProductos = new List<int>();  
+            customers = new Customers();
+            cantidadProductosComprados = new List<int>();
         }
 
         private void btnAutos_Click(object sender, EventArgs e)
@@ -49,16 +60,6 @@ namespace practica_PDV.FRONT.FromCaja
                 dataGridProduct.Hide();
                 this.cargarDatos();
             }
-        }
-
-        private void btnRefacciones_Click(object sender, EventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("NO CONTAMOS CON PIEZAS DISPONIBLES","FAVOR DE CONTINUAR",MessageBoxButtons.YesNo,MessageBoxIcon.Hand);
-        }
-
-        private void btnAccesorios_Click(object sender, EventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("NO CONTAMOS CON PIEZAS DISPONIBLES", "FAVOR DE CONTINUAR", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
         }
         private void dataGridProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -148,8 +149,12 @@ namespace practica_PDV.FRONT.FromCaja
             for (int i = 0; i < datos.Count; i++)
             {
                 dataGridProduct.Rows.Add(datos[i]);
-
-
+            }
+            dataGridCustomers.Rows.Clear();
+            List<object[]> datos2 = customers.selectAllCustomers();
+            for (int i = 0; i < datos2.Count; i++) 
+            {
+                dataGridCustomers.Rows.Add(datos2[i]);
             }
         }
         public void calcularSubtotal()
@@ -195,7 +200,7 @@ namespace practica_PDV.FRONT.FromCaja
                     }
                     txtBuscar.Clear();
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     MessageBox.Show("ALGO OCURRIO","ERROR" + bd.mesError);
                 }
@@ -211,33 +216,98 @@ namespace practica_PDV.FRONT.FromCaja
         {
             try
             {
-                List<int> idProductos = new List<int>();
-                List<int> cantidadProductos = new List<int>();
+                double total = double.Parse(txtTotal.Text);
+                double cantidadRecibida = double.Parse(txtMonto.Text);
+                //double cambio = 0;
+                double res = (cantidadRecibida - total); 
+                txtCambio.Text = res.ToString(); 
 
+                //se armó
+                //preparamos las vars para registra la venta
+                List<ProductsToSell> prodsAVender = new List<ProductsToSell>();
 
-                foreach (DataGridViewRow row in dataGridDesc.Rows)
+                //cambio
+                int idCliente = int.Parse(txtId.Text.ToString());
+                comandoSelect = $"INSERT INTO sales (customer_id,date,total_amount) VALUES('{idCliente}',CURDATE(),'{total}');";
+                con.Open();
+                comando = new MySqlCommand(comandoSelect, con);
+                comando.ExecuteNonQuery();
+
+                comandoSelect = "SELECT LAST_INSERT_ID() FROM sales";
+                double feria = 0;
+                comando = new MySqlCommand(comandoSelect,con);
+                string id = (comando.ExecuteScalar().ToString());
+                foreach (DataGridViewRow datos in dataGridDesc.Rows) 
                 {
-                    int id = (int)row.Cells[0].Value;
-                    idProductos.Add(id);
+                    comandoSelect = $"INSERT INTO details_sales(sales_id, product_id, quantity) VALUES ('{id}', '{datos.Cells[0].Value}', '{datos.Cells[1].Value}')";
+                    comando = new MySqlCommand(comandoSelect, con);
+                    comando.ExecuteNonQuery();
                 }
-                foreach (DataGridViewRow row in dataGridDesc.Rows) 
+
+                if (feria == -1)
                 {
-                    var cantidadCell = row.Cells[1];
-                    if (cantidadCell.Value != null && int.TryParse(cantidadCell.Value.ToString(), out int cantidad))
-                    {
-                        cantidadProductos.Add(cantidad);
-                    }
+                    MessageBox.Show("ERROR AL REGISTRAR LA VENTA" + Sels.msgError);
                 }
-
-                FormPagar formPagar = new FormPagar(idProductos, total, cantidadProductos);
-                formPagar.Show();
-
+                else
+                {
+                    double numRedon = Math.Round(feria, 2);//CON ESTO REDONDEAMOS. 
+                    MessageBox.Show($"VENTA REGISTRADA CON ÉXITO");
+                    MessageBox.Show($"SU CAMBIO ES {numRedon}");
+                    this.cargarDatos();
+                }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("Algo salió mal");
             }
 
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            if (dataGridCustomers.Visible == false)
+            {
+                dataGridCustomers.Show();
+                this.cargarDatos();
+            }
+            else
+            {
+                dataGridCustomers.Hide();
+                this.cargarDatos();
+            }
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            Form nuevo = new Form();
+            nuevo = new FormInsertCustomer();
+            nuevo.Show();
+        }
+
+        private void dataGridCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int celdas = e.RowIndex;
+                this.identifi = (int)dataGridCustomers.Rows[celdas].Cells[0].Value;
+                this.nombre = dataGridCustomers.Rows[celdas].Cells[1].Value.ToString();
+
+                txtId.Text = this.identifi.ToString();
+
+            }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; 
+            }
+
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

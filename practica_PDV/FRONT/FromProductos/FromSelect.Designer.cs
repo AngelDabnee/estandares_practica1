@@ -33,6 +33,7 @@
             this.labelTitulo = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panelBusqueda = new System.Windows.Forms.Panel();
+            this.labelId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_in_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelId = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             this.panelBusqueda.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -98,8 +98,20 @@
             this.panelBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBusqueda.Location = new System.Drawing.Point(0, 63);
             this.panelBusqueda.Name = "panelBusqueda";
-            this.panelBusqueda.Size = new System.Drawing.Size(1249, 741);
+            this.panelBusqueda.Size = new System.Drawing.Size(1249, 790);
             this.panelBusqueda.TabIndex = 1;
+            // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.BackColor = System.Drawing.Color.Transparent;
+            this.labelId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.White;
+            this.labelId.Location = new System.Drawing.Point(263, 192);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(128, 24);
+            this.labelId.TabIndex = 8;
+            this.labelId.Text = "ID a Eliminar";
             // 
             // txtId
             // 
@@ -114,9 +126,9 @@
             this.panelMenu.Controls.Add(this.menu);
             this.panelMenu.Controls.Add(this.btnMenu);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMenu.Location = new System.Drawing.Point(1053, 0);
+            this.panelMenu.Location = new System.Drawing.Point(1006, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(196, 741);
+            this.panelMenu.Size = new System.Drawing.Size(243, 790);
             this.panelMenu.TabIndex = 6;
             // 
             // menu
@@ -127,7 +139,7 @@
             this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menu.Location = new System.Drawing.Point(0, 64);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(196, 677);
+            this.menu.Size = new System.Drawing.Size(243, 726);
             this.menu.TabIndex = 5;
             // 
             // btnEdit
@@ -137,7 +149,7 @@
             this.btnEdit.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(0, 128);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(196, 64);
+            this.btnEdit.Size = new System.Drawing.Size(243, 64);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -150,7 +162,7 @@
             this.btnInsert.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.Location = new System.Drawing.Point(0, 64);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(196, 64);
+            this.btnInsert.Size = new System.Drawing.Size(243, 64);
             this.btnInsert.TabIndex = 2;
             this.btnInsert.Text = "Nuevo";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -163,7 +175,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(0, 0);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(196, 64);
+            this.btnEliminar.Size = new System.Drawing.Size(243, 64);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -176,7 +188,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Location = new System.Drawing.Point(0, 0);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(196, 64);
+            this.btnMenu.Size = new System.Drawing.Size(243, 64);
             this.btnMenu.TabIndex = 4;
             this.btnMenu.Text = "Herramientas";
             this.btnMenu.UseVisualStyleBackColor = true;
@@ -200,7 +212,7 @@
             this.panelDataGrid.BackColor = System.Drawing.Color.Transparent;
             this.panelDataGrid.Controls.Add(this.dataGridProduct);
             this.panelDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelDataGrid.Location = new System.Drawing.Point(0, 519);
+            this.panelDataGrid.Location = new System.Drawing.Point(0, 568);
             this.panelDataGrid.Name = "panelDataGrid";
             this.panelDataGrid.Size = new System.Drawing.Size(1249, 285);
             this.panelDataGrid.TabIndex = 3;
@@ -267,25 +279,13 @@
             this.quantity_in_stock.Name = "quantity_in_stock";
             this.quantity_in_stock.ReadOnly = true;
             // 
-            // labelId
-            // 
-            this.labelId.AutoSize = true;
-            this.labelId.BackColor = System.Drawing.Color.Transparent;
-            this.labelId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.ForeColor = System.Drawing.Color.White;
-            this.labelId.Location = new System.Drawing.Point(263, 192);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(128, 24);
-            this.labelId.TabIndex = 8;
-            this.labelId.Text = "ID a Eliminar";
-            // 
             // FromSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1249, 804);
+            this.ClientSize = new System.Drawing.Size(1249, 853);
             this.Controls.Add(this.panelDataGrid);
             this.Controls.Add(this.panelBusqueda);
             this.Controls.Add(this.panelTitulo);
