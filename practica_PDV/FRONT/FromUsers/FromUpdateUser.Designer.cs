@@ -36,16 +36,16 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDatos = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.labeId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelname = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.labeId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUser)).BeginInit();
             this.panelDatos.SuspendLayout();
@@ -80,6 +80,7 @@
             this.dataGridUser.RowTemplate.Height = 24;
             this.dataGridUser.Size = new System.Drawing.Size(839, 1020);
             this.dataGridUser.TabIndex = 0;
+            this.dataGridUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUser_CellContentClick);
             // 
             // id
             // 
@@ -128,6 +129,57 @@
             this.panelDatos.Size = new System.Drawing.Size(464, 1020);
             this.panelDatos.TabIndex = 1;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(261, 661);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(125, 45);
+            this.btnCancel.TabIndex = 26;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // labeId
+            // 
+            this.labeId.AutoSize = true;
+            this.labeId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeId.ForeColor = System.Drawing.Color.White;
+            this.labeId.Location = new System.Drawing.Point(89, 281);
+            this.labeId.Name = "labeId";
+            this.labeId.Size = new System.Drawing.Size(29, 24);
+            this.labeId.TabIndex = 25;
+            this.labeId.Text = "ID";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(209, 281);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(167, 30);
+            this.txtId.TabIndex = 24;
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.BackColor = System.Drawing.Color.Transparent;
+            this.labelPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.ForeColor = System.Drawing.Color.White;
+            this.labelPassword.Location = new System.Drawing.Point(89, 495);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(103, 24);
+            this.labelPassword.TabIndex = 23;
+            this.labelPassword.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(205, 495);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(170, 30);
+            this.txtPassword.TabIndex = 22;
+            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,6 +189,7 @@
             this.btnConfirmar.TabIndex = 20;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // labelEmail
             // 
@@ -178,57 +231,6 @@
             this.txtName.Size = new System.Drawing.Size(170, 30);
             this.txtName.TabIndex = 16;
             // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.BackColor = System.Drawing.Color.Transparent;
-            this.labelPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(89, 495);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(103, 24);
-            this.labelPassword.TabIndex = 23;
-            this.labelPassword.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(205, 495);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(170, 30);
-            this.txtPassword.TabIndex = 22;
-            // 
-            // labeId
-            // 
-            this.labeId.AutoSize = true;
-            this.labeId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeId.ForeColor = System.Drawing.Color.White;
-            this.labeId.Location = new System.Drawing.Point(89, 281);
-            this.labeId.Name = "labeId";
-            this.labeId.Size = new System.Drawing.Size(29, 24);
-            this.labeId.TabIndex = 25;
-            this.labeId.Text = "ID";
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(209, 281);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(167, 30);
-            this.txtId.TabIndex = 24;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(261, 661);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(125, 45);
-            this.btnCancel.TabIndex = 26;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // FromUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -240,6 +242,7 @@
             this.Controls.Add(this.panelData);
             this.Name = "FromUpdateUser";
             this.Text = "FromUpdateUser";
+            this.Load += new System.EventHandler(this.FromUpdateUser_Load);
             this.panelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUser)).EndInit();
             this.panelDatos.ResumeLayout(false);
