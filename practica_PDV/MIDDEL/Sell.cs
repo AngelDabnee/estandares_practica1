@@ -21,7 +21,7 @@ namespace practica_PDV.MIDDEL
         {
             bd = new CRUD_BACK.MySql();
         }
-        public double sell(int userid, double amount, double pay, List<ProductsToSell> productsToSells) 
+        public double registerSell(int userid, double amount, double pay, List<ProductsToSell> productsToSells) 
         {
             double result = 0;
             this.dataTime = new DateTime();
@@ -37,7 +37,7 @@ namespace practica_PDV.MIDDEL
                 {
                     new ValoresAInsertar(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),true),
                     new ValoresAInsertar(sesion.id.ToString(),false),
-                    new ValoresAInsertar(amount.ToString(),false)
+                    new ValoresAInsertar(amount.ToString(),true)
                 };
                 bool registerSell = bd.insert("sales",campos, vals);
                 if (registerSell) 

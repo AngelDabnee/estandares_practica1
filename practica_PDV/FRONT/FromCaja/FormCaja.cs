@@ -21,13 +21,19 @@ namespace practica_PDV.FRONT.FromCaja
         double cantidad;
         string nombre;
         double total;
-        double subtotal; 
+        double subtotal;
+        List<int> idProductos;
+        List<int> cantidadProductos;
+
+
 
         public FormCaja()
         {
             InitializeComponent();
             products = new Products();
             venta = new Sels();
+            idProductos = new List<int>();
+            cantidadProductos = new List<int>();    
             bd = new CRUD_BACK.MySql();
         }
 
@@ -63,12 +69,14 @@ namespace practica_PDV.FRONT.FromCaja
                     int celdas = e.RowIndex;
                     this.nombre = dataGridProduct.Rows[celdas].Cells[1].Value.ToString();
                     this.total = double.Parse(dataGridProduct.Rows[celdas].Cells[3].Value.ToString());
+                    //int idProductoSeleccionado = Convert.ToInt32(dataGridProduct.Rows[celdas].Cells["id"].Value);
+                    //idProductos.Add(idProductoSeleccionado);
 
                     int fila = dataGridDesc.Rows.Add();
                     cantidad = double.Parse(numericMultiplicador.Value.ToString());
                     dataGridDesc.Rows[fila].Cells["cantidad_detalle"].Value = double.Parse(numericMultiplicador.Value.ToString());
                     dataGridDesc.Rows[fila].Cells["nameDetalle"].Value = dataGridProduct.Rows[celdas].Cells[1].Value;
-
+                    dataGridDesc.Rows[fila].Cells["id_detalle"].Value = dataGridProduct.Rows[celdas].Cells[0].Value;
                     double importe = double.Parse(dataGridProduct.Rows[celdas].Cells[3].Value.ToString());
                     dataGridDesc.Rows[fila].Cells["importe_detalle"].Value = importe * cantidad;
                     numericMultiplicador.Value = 1;
@@ -161,10 +169,10 @@ namespace practica_PDV.FRONT.FromCaja
                 txtSubtotal.Text = (nuevoSubtotal / 1.16).ToString();
 
                 double totalSinIva = 0;
-                double totalConIva = double.Parse(txtTotal.Text);
+                total = double.Parse(txtTotal.Text);
                 double subtotalNuevo= double.Parse(txtSubtotal.Text);
                 
-                totalSinIva = totalConIva-subtotalNuevo;
+                totalSinIva = total-subtotalNuevo;
                 txtIva.Text = totalSinIva.ToString();
 
             }
@@ -197,6 +205,39 @@ namespace practica_PDV.FRONT.FromCaja
         private void lblProduc_Click(object sender, EventArgs e)
         {
             this.FormCaja_Load(sender, e);
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> idProductos = new List<int>();
+                List<int> cantidadProductos = new List<int>();
+
+
+                foreach (DataGridViewRow row in dataGridDesc.Rows)
+                {
+                    int id = (int)row.Cells[0].Value;
+                    idProductos.Add(id);
+                }
+                foreach (DataGridViewRow row in dataGridDesc.Rows) 
+                {
+                    var cantidadCell = row.Cells[1];
+                    if (cantidadCell.Value != null && int.TryParse(cantidadCell.Value.ToString(), out int cantidad))
+                    {
+                        cantidadProductos.Add(cantidad);
+                    }
+                }
+
+                FormPagar formPagar = new FormPagar(idProductos, total, cantidadProductos);
+                formPagar.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo salió mal");
+            }
+
         }
     }
 }

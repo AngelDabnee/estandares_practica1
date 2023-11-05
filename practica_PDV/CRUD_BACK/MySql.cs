@@ -353,5 +353,52 @@ namespace practica_PDV.CRUD_BACK
             }
             return resultado; 
         }
+
+        public override object selectOneSales()
+        {
+            object resultado = new object();
+            int resCorrecto = 0;
+            try
+            {
+                //validar conexion y abrirla
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
+                    con.Open();
+                    //establecer el QUERY----> SELECT * FROM tabla
+                    command = new MySqlCommand($"SELECT id FROM `sales` WHERE 1 ORDER BY id DESC LIMIT 1;");
+                    //relacionamos el comando con la conexión
+                    command.Connection = con;
+                    //ejecutar el query
+                    resultado = command.ExecuteScalar();//devolvemos un solo valor. 
+                    if (resultado != null)//al ejecutarse correctamente la query mandaremos el dato. 
+                    {
+                        resultado = 1;
+                    }
+                    else
+                    {
+                        this.mesError = $"NO EXISTEN REGISTROS EN LA TABLA {tabla}";
+                        resultado = null; //SIEMPRE QUE CREEMOS ALGO, DEVOLVEMOS UN NULO CUANDO EL RESULTADO DE LA CONSULTA ES ERROENA. 
+                    }
+                }
+
+            }
+
+            catch (MySqlException mes)
+            {
+                this.mesError = $"NO SE PUDO REALIZAR LA CONSULTA A LA BAE DE DATOS {mes.Message}";
+            }
+            catch (Exception ex)
+            {
+                this.mesError = $"ERROR GENERAL DE WINDOWS {ex.Message}";
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            return resultado;
+        }
     }
 }

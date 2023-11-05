@@ -32,6 +32,9 @@ namespace practica_PDV.CRUD_BACK
         public abstract List<object[]> selectAll(string tabla);
         public abstract List<object[]> selectAll(string tabla,string criterioBusqueda);
         public abstract List<object[]> selectOne(string campo, string tabla, string criterioBusqueda);
+        //BUSQUEDA ESPECIAL
+        public abstract object selectOneSales();
+
         public abstract object selectUser(string tabla, string criterioBusqueda);
     }
 }

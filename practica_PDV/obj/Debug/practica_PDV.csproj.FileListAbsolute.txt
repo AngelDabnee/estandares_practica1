@@ -54,3 +54,4 @@ C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRO
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromSuppliers.FormSupplier.resources
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromSuppliers.FormAddSuppiler.resources
 C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromCaja.FormCaja.resources
+C:\Users\Uesda\source\repos\practica_PDV\practica_PDV\obj\Debug\practica_PDV.FRONT.FromCaja.FormPagar.resources

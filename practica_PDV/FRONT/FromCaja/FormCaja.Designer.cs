@@ -64,6 +64,7 @@
             this.labelSubtotal = new System.Windows.Forms.Label();
             this.panelDataGridDetalle = new System.Windows.Forms.Panel();
             this.dataGridDesc = new System.Windows.Forms.DataGridView();
+            this.id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -320,6 +321,7 @@
             this.btnPagar.TabIndex = 6;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // btnLimpiar
             // 
@@ -382,6 +384,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(319, 157);
             this.txtTotal.Name = "txtTotal";
@@ -390,6 +393,7 @@
             // 
             // txtIva
             // 
+            this.txtIva.Enabled = false;
             this.txtIva.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIva.Location = new System.Drawing.Point(319, 100);
             this.txtIva.Name = "txtIva";
@@ -398,6 +402,7 @@
             // 
             // txtSubtotal
             // 
+            this.txtSubtotal.Enabled = false;
             this.txtSubtotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.Location = new System.Drawing.Point(319, 37);
             this.txtSubtotal.Name = "txtSubtotal";
@@ -457,6 +462,7 @@
             this.dataGridDesc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridDesc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDesc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_detalle,
             this.cantidad_detalle,
             this.nameDetalle,
             this.importe_detalle});
@@ -469,6 +475,13 @@
             this.dataGridDesc.RowTemplate.Height = 24;
             this.dataGridDesc.Size = new System.Drawing.Size(614, 259);
             this.dataGridDesc.TabIndex = 0;
+            // 
+            // id_detalle
+            // 
+            this.id_detalle.HeaderText = "ID";
+            this.id_detalle.MinimumWidth = 6;
+            this.id_detalle.Name = "id_detalle";
+            this.id_detalle.ReadOnly = true;
             // 
             // cantidad_detalle
             // 
@@ -561,6 +574,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descProduc;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe_detalle;

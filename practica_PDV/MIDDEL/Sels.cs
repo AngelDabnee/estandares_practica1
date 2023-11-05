@@ -20,12 +20,13 @@ namespace practica_PDV.MIDDEL
         {
             bd = new CRUD_BACK.MySql();
         }
-        public double registrarVenta(int id_client, int total_amount,double pago, List<ProductsToSell> productToSell) 
+        public double registrarVenta(int id_client, double total_amount, List<ProductsToSell> productToSell) 
         {
             double res = 0;
             this.fechaHora = new DateTime();
             fechaHora = fechaHora.ToUniversalTime();
             string newDate = fechaHora.ToString("yyyy-MM-dd HH:mm:ss");
+            double pago = 0;
             try
             {
                 List<string> campos = new List<string>()
@@ -34,36 +35,51 @@ namespace practica_PDV.MIDDEL
                 };
                 List<ValoresAInsertar> vals = new List<ValoresAInsertar>()
                 {
-                    new ValoresAInsertar(customers.id.ToString(),false),
+                    new ValoresAInsertar(id_client.ToString(),false),
                     new ValoresAInsertar(DateTime.Now.ToString("yyyy,MM,dd HH:mm:ss"),true),
-                    new ValoresAInsertar(monto.ToString(),false),
+                    new ValoresAInsertar(total_amount.ToString(),true),
                 };
                 bool registerSale = bd.insert("sales",campos,vals);
                 if (registerSale) 
                 {
-                    int lastSale = int.Parse(bd.selectOne("id","sales","1 ORDER BY id DESC LIMIT 1").ToString());
-                    List<string> camposDetalle = new List<string>()
+                    object lastSaleObj = bd.selectOne("id", "sales", "1 ORDER BY id DESC LIMIT 1");
+                    int lastSale = 0; // Valor predeterminado en caso de que no haya resultados válidos
+
+                    if (lastSaleObj != null && int.TryParse(lastSaleObj.ToString(), out lastSale))
                     {
-                        "sales_id","product_id","quantity"
-                    };
-                    for (int i = 0; i < productToSell.Count; i++) 
-                    {
-                        List<ValoresAInsertar> valoresDetalle = new List<ValoresAInsertar>() 
+                        List<string> camposDetalle = new List<string>()
                         {
-                            new ValoresAInsertar(lastSale.ToString(),false),
-                            new ValoresAInsertar(productToSell[i].ToString(),false),
-                            new ValoresAInsertar(productToSell[i].ToString(),false)
+                            "sales_id","product_id","quantity"
                         };
-                        bool resDetalle = bd.insert("details_sales",camposDetalle,valoresDetalle);
-                        if (resDetalle == true)
+
+                        for (int i = 0; i < productToSell.Count; i++)
                         {
-                            res = pago - total_amount;
+                            List<ValoresAInsertar> valoresDetalle = new List<ValoresAInsertar>()
+                            {
+                                new ValoresAInsertar(lastSale.ToString(),false),
+                                new ValoresAInsertar(productToSell[i].ToString(),false),
+                                new ValoresAInsertar(productToSell[i].ToString(),false)
+                            };
+
+                            bool resDetalle = bd.insert("details_sales", camposDetalle, valoresDetalle);
+
+                            if (resDetalle)
+                            {
+                                pago = total_amount;
+                                res = pago - total_amount;
+                            }
+                            else
+                            {
+                                Sels.msgError = bd.mesError;
+                                return -1;
+                            }
                         }
-                        else 
-                        {
-                            Sels.msgError = bd.mesError;
-                            return -1;
-                        }
+                    }
+                    else
+                    {
+                        // Manejo de error o mensaje de registro no encontrado
+                        Sels.msgError = "No se encontró un registro válido en la tabla 'sales'";
+                        return -1;
                     }
                 }
             }
